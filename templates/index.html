@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <!-- Bootstrap 4-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+
+    <!-- Favicon File -->
+    <link rel="shortcut icon" type="image/png" href="static/images/favicon.jpg">
+
+    <!-- Page Title -->
+    <title>Chasing Jack Kerouac - Finding the most iconic places Sal and Dean roamed</title>
+
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ (url_for('addlocation')) }}">Register</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container-fluid">
+                <h1 class="display-2">Chasing Jack Kerouac</h1>
+                <p class="lead">About 70 years ago Jack Kerouac travelled America.<br>
+                                He than wrote a book that inspired millions: On the Road.<br>
+                                What do the places Sal Paradise and Dean Moriarty roamed look like now?<br>
+                                Check it out right here and add your own experience!
+                </p>
+            </div>
+        </div>
+    </header>
+    <div class="container-fluid">
+        <div class="row black-background header-content">
+            <div class="col-12">
+                <div class="row yellow-underline">
+                    <div class="col-4"><span class="object">City: </span><span class="value">San Francisco</span></div>
+
+                    <div class="col-4"><span class="object">Location: </span><span class="value">Coit Tower</span></div>
+
+                    <div class="col-4"><span class="object">Date: </span><span class="value">08-10-2019</span></div>
+        </div></div></div>
+        <div class="row black-background main-content">
+            <div class="col-8">
+            <div class="row">
+                    <div class="col-5"><p class="object">Chapter in book:</p></div><div class="col-7"><p class="value">Part 1, chapter 11</p></div></div>
+                <div class="row">
+                    <div class="col-5"><p class="object">Quote in book:</p></div><div class="col-7"><p class="value">Another hour it would come streaming through the Golden Gate to shroud the romantic city in white,
+                                                                                                                     and a young man would hold his girl by the hand and climb slowly up a long white sidewalk with a bottle of Tokay in his pocket.
+                                                                                                                     That was Frisco; and beautiful women standing in white doorways, waiting for their men; and Coit Tower,
+                                                                                                                     and the Embarcadero, and Market Street, and the eleven teeming hills.</p></div></div>
+                <div class="row">
+                    <div class="col-5"><p class="object">Name visitor:</p></div><div class="col-7"><p class="value">Lenting</p></div></div>
+                <div class="row">
+                    <div class="col-5"><p class="object">Experience:</p></div><div class="col-7"><p class="value">Loved it, the view is amazing!</p></div></div>
+            </div>
+            <div class="col-4"><img class="homepage-image" src="static/images/coit-tower.jpg"></div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer">
+            <p>Copyright and stuf like that, maybe some social buttons</p>
+        </div>
+    </footer>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js "></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js "></script>
+</body>
+</html>

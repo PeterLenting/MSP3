@@ -1,0 +1,120 @@
+.navbar {
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color:#00b0f0;
+}
+
+.navbar-dark .navbar-nav .nav-link.disabled {
+    color:#00b0f0;
+}
+
+.navbar-dark .navbar-nav .active>.nav-link {
+    color:#00b0f0;
+}
+
+.bg-dark {
+    background-color: black!important;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: #F8F8F8;
+}
+
+.jumbotron {
+  background-image: url("/static/images/denver-sf.jpg");
+  background-size: 100% 100%;
+  color: White;
+  text-shadow: -1px 0 #00b0f0, 0 1px #00b0f0, 1px 0 #00b0f0, 0 -1px #00b0f0;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.btn-search {
+    background-color:  #00b0f0;
+    color: black;
+    font-weight: bold;
+}
+
+.btn-primary {
+    background-color:  #00b0f0;
+    color: black;
+    font-weight: bold;
+}
+
+.submit-button {
+    text-align: center;
+}
+
+.form-control {
+    background-color: #F8F8F8;
+}
+
+.form-row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.lead {
+    text-shadow: none;
+}
+
+.black-background {
+    background-color: black;
+    border-radius: 10px;
+}
+
+.homepage-image {
+    width: 90%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.object {
+    color: #00b0f0;
+}
+
+.value {
+    color: #fffdcc;
+}
+
+.yellow-underline {
+    border-bottom: 1px solid #F8F8F8;
+    padding-bottom: 5px;
+}
+
+.display-2 {
+    margin-bottom: 40px;
+}
+
+.header-content {
+    font-size: 1.5em;
+}
+
+.main-content {
+    font-size: 1.2em;
+}
+
+.footer {
+    background-color:  #00b0f0;
+    border-radius: 10px;
+    color: black;
+    padding: 10px;
+    margin-top: 32px;
+    text-align: center;
+}
+
+ @media(min-width: 1400px){
+body {
+    margin-left: 200px;
+    margin-right: 200px;
+    }
+}
