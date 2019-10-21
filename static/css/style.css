@@ -34,16 +34,11 @@ body {
   border-radius: 10px;
 }
 
-.btn-search {
-    background-color:  #00b0f0;
-    color: black;
-    font-weight: bold;
-}
-
 .btn-primary {
     background-color:  #00b0f0;
     color: black;
     font-weight: bold;
+    margin-bottom: 2px;
 }
 
 .submit-button {
@@ -68,6 +63,10 @@ body {
     border-radius: 10px;
 }
 
+.form-color {
+    color: #fffdcc;
+}
+
 .homepage-image {
     width: 90%;
     height: auto;
@@ -86,13 +85,34 @@ body {
     color: #fffdcc;
 }
 
+.about {
+    color: #fffdcc;
+}
+
+#imageAbout {
+    width: 80%;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#headerAbout {
+    color: #00b0f0;
+    text-align: center;
+}
+
 .yellow-underline {
     border-bottom: 1px solid #F8F8F8;
     padding-bottom: 5px;
+    text-align: center;
 }
 
 .display-2 {
     margin-bottom: 40px;
+}
+
+header {
+    margin-top: 1px;
 }
 
 .header-content {
@@ -104,10 +124,11 @@ body {
 }
 
 .footer {
-    background-color:  #00b0f0;
+    color:  #00b0f0;
     border-radius: 10px;
-    color: black;
+    background-color: black;
     padding: 10px;
+    margin-bottom: 1px;
     margin-top: 32px;
     text-align: center;
 }

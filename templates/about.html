@@ -33,10 +33,10 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="{{ (url_for('get_index')) }}">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="{{ (url_for('get_index')) }}">Home </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ (url_for('about')) }}">About</a>
+                        <a class="nav-link" href="{{ (url_for('about')) }}">About <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ (url_for('addlocation')) }}">Add location</a>
@@ -55,39 +55,25 @@
             </div>
         </div>
     </header>
-    <div class="container-fluid">
-        <p>
-        {% for myFirstMDB in index %}
-            {{myFirstMDB.City}}
-            {{myFirstMDB.Location}}
-        {% endfor %}
-        </p>
-        <div class="row black-background header-content">
-            <div class="col-12">
-                <div class="row yellow-underline">
-                    <div class="col-4"><span class="object">City: </span><span class="value">San Francisco</span></div>
-
-                    <div class="col-4"><span class="object">Location: </span><span class="value">Coit Tower</span></div>
-
-                    <div class="col-4"><span class="object">Date: </span><span class="value">08-10-2019</span></div>
-        </div></div></div>
-        <div class="row black-background main-content">
-            <div class="col-8">
-            <div class="row">
-                    <div class="col-5"><p class="object">Chapter in book:</p></div><div class="col-7"><p class="value">Part 1, chapter 11</p></div></div>
-                <div class="row">
-                    <div class="col-5"><p class="object">Quote in book:</p></div><div class="col-7"><p class="value">Another hour it would come streaming through the Golden Gate to shroud the romantic city in white,
-                                                                                                                     and a young man would hold his girl by the hand and climb slowly up a long white sidewalk with a bottle of Tokay in his pocket.
-                                                                                                                     That was Frisco; and beautiful women standing in white doorways, waiting for their men; and Coit Tower,
-                                                                                                                     and the Embarcadero, and Market Street, and the eleven teeming hills.</p></div></div>
-                <div class="row">
-                    <div class="col-5"><p class="object">Name visitor:</p></div><div class="col-7"><p class="value">Lenting</p></div></div>
-                <div class="row">
-                    <div class="col-5"><p class="object">Experience:</p></div><div class="col-7"><p class="value">Loved it, the view is amazing!</p></div></div>
+         <div class="container-fluid">
+            <div class="row black-background main-content">
+                <div class="col-12"><h1 id="headerAbout">About</h1></div>
             </div>
-            <div class="col-4"><img class="homepage-image" src="static/images/coit-tower.jpg"></div>
-        </div>
-    </div>
+                <div class="row about black-background main-content">
+                    <div class="col-8"><p>This page is made for fans of On the Road, the classic noval written bij Jack Kerouac and first publiced in 1957.
+                        Kerouac was a member of the Beat-generation and On the Road is based on the trips he made with other Beats,
+                        trying to discover Anerica and themselves.</p>
+                        <p>Kerouac, in the book called Sal Paradise, took multiple car-trips from west to east and back.
+                        On those trips he roamed the streets of New York, Chicago, Denver, San Francisco and Los Angeles (a.o.).</p>
+                        <p>A lot of the places Sal and his friends visited are still there and people from around the world visit them
+                        to get a real sense of the setting of the book. To see what Sal and Dean saw and maybe even feel what they felt
+                        in local jazz-clubs and on the long and empty roads.</p>
+                        <p>On this page you can find places you can go to themselves and read what other people who visited it think of it.
+                        And you can enter your own experience so other people can read it and maybe follow in your footsteps.</p></div>
+                    <div class="col-4"><img id="imageAbout" src="static/images/on-the-road-2006.jpg"></div>
+                </div>
+         </div>
+
     <footer>
         <div class="footer">
             <p>Copyright and stuf like that, maybe some social buttons</p>
