@@ -56,11 +56,11 @@
         </div>
     </header>
     <div class="container-fluid black-background form-color">
-        <form>
+        <form action="{{url_for('insert_location')}}" method="POST">
             <div class="form-row">
                 <div class="form-group col-md-4">
-                    <label for="inputState">City</label>
-                    <select id="inputState" class="form-control">
+                    <label for="inputCity">City</label>
+                    <select id="city" name="city" class="form-control">
                         <option selected>Choose...</option>
                         <option>New York City (NY)</option>
                         <option>Denver (CO)</option>
@@ -74,17 +74,17 @@
                 </div>
                 <div class="form-group col-md-4">
                     <label for="inputCity">Location</label>
-                    <input type="text" class="form-control" id="inputCity" placeholder="What specific place are we talking about?">
+                    <input type="text" id="location" name="location" class="form-control" placeholder="What specific place are we talking about?">
                 </div>
                 <div class="form-group col-md-4">
                     <label for="inputCity">Date</label>
-                    <input type="text" class="form-control" id="inputCity" placeholder="mm/dd/yy">
+                    <input type="text" id="date" name="date" class="form-control" placeholder="mm/dd/yy">
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <label for="inputState">Part of the book</label>
-                    <select id="inputState" class="form-control">
+                    <label for="inputPart">Part of the book</label>
+                    <select id="part_of_book" name="part_of_book" class="form-control">
                         <option selected>Choose...</option>
                         <option>Part 1</option>
                         <option>Part 2</option>
@@ -93,8 +93,8 @@
                     </select>
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="inputState">Chapter of the book</label>
-                    <select id="inputState" class="form-control">
+                    <label for="inputChapter">Chapter of the book</label>
+                    <select id="chapter_in_book" name="chapter_in_book" class="form-control">
                         <option selected>Choose...</option>
                         <option>Chapter 1</option>
                         <option>Chapter 2</option>
@@ -115,22 +115,22 @@
             </div>
             <div class="form-row">
                 <div class="form-group col-md-12">
-                    <label for="inputAddress2">Quote in book</label>
-                    <input type="text" class="form-control" id="inputAddress2" placeholder="What does Jack Kerouac write about this place?">
+                    <label for="inputQuote">Quote in book</label>
+                    <input type="text" class="form-control" id="quote_in_book" name="quote_in_book" placeholder="What does Jack Kerouac write about this place?">
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-3">
-                    <label for="inputAddress2">My name</label>
-                    <input type="text" class="form-control" id="inputAddress2" placeholder="What's your name?">
+                    <label for="inputName">My name</label>
+                    <input type="text" class="form-control" id="name_visitor" name="name_visitor" placeholder="What's your name?">
                 </div>
                 <div class="form-group col-md-9">
-                    <label for="inputAddress2">My experience</label>
-                    <input type="text" class="form-control" id="inputAddress2" placeholder="Tell us about your own experience">
+                    <label for="inputExperience">My experience</label>
+                    <input type="text" class="form-control" id="experience" name="experience" placeholder="Tell us about your own experience">
                 </div>
             </div>
             <div class="submit-button">
-            <button type="button" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
             </div>
         </form>
      </div>

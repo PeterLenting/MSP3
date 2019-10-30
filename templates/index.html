@@ -56,37 +56,77 @@
         </div>
     </header>
     <div class="container-fluid">
-        <p>
-        {% for myFirstMDB in index %}
-            {{myFirstMDB.City}}
-            {{myFirstMDB.Location}}
-        {% endfor %}
-        </p>
-        <div class="row black-background header-content">
-            <div class="col-12">
-                <div class="row yellow-underline">
-                    <div class="col-4"><span class="object">City: </span><span class="value">San Francisco</span></div>
+        {% for hallmark in myFirstMDB %}
+        <div class="content">
+            <div class="row black-background header-content">
+                <div class="col-12">
+                    <div class="row yellow-underline">
+                        <div class="col-4">
+                            <span class="object">City: </span>
+                            <span class="value">{{hallmark.city}}</span>
+                        </div>
 
-                    <div class="col-4"><span class="object">Location: </span><span class="value">Coit Tower</span></div>
+                        <div class="col-4">
+                            <span class="object">Location: </span>
+                            <span class="value">{{hallmark.location}}</span>
+                        </div>
 
-                    <div class="col-4"><span class="object">Date: </span><span class="value">08-10-2019</span></div>
-        </div></div></div>
-        <div class="row black-background main-content">
-            <div class="col-8">
-            <div class="row">
-                    <div class="col-5"><p class="object">Chapter in book:</p></div><div class="col-7"><p class="value">Part 1, chapter 11</p></div></div>
-                <div class="row">
-                    <div class="col-5"><p class="object">Quote in book:</p></div><div class="col-7"><p class="value">Another hour it would come streaming through the Golden Gate to shroud the romantic city in white,
-                                                                                                                     and a young man would hold his girl by the hand and climb slowly up a long white sidewalk with a bottle of Tokay in his pocket.
-                                                                                                                     That was Frisco; and beautiful women standing in white doorways, waiting for their men; and Coit Tower,
-                                                                                                                     and the Embarcadero, and Market Street, and the eleven teeming hills.</p></div></div>
-                <div class="row">
-                    <div class="col-5"><p class="object">Name visitor:</p></div><div class="col-7"><p class="value">Lenting</p></div></div>
-                <div class="row">
-                    <div class="col-5"><p class="object">Experience:</p></div><div class="col-7"><p class="value">Loved it, the view is amazing!</p></div></div>
+                        <div class="col-4">
+                            <span class="object">Date: </span>
+                            <span class="value">{{hallmark.date}}</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-4"><img class="homepage-image" src="static/images/coit-tower.jpg"></div>
+            <div class="row black-background main-content">
+                <div class="col-8">
+                    <div class="row">
+                        <div class="col-5">
+                            <p class="object">Part of book:</p>
+                        </div>
+                        <div class="col-7">
+                            <p class="value">{{hallmark.part_of_book}}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-5">
+                            <p class="object">Chapter in book:</p>
+                        </div>
+                        <div class="col-7">
+                            <p class="value">{{hallmark.chapter_in_book}}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-5">
+                            <p class="object">Quote in book:</p>
+                        </div>
+                        <div class="col-7">
+                            <p class="value">{{hallmark.quote_in_book}}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                            <div class="col-5">
+                                <p class="object">Name visitor:</p>
+                            </div>
+                            <div class="col-7">
+                                <p class="value">{{hallmark.name_visitor}}</p>
+                                </div>
+                            </div>
+                    <div class="row">
+                        <div class="col-5">
+                            <p class="object">Experience:</p>
+                        </div>
+                        <div class="col-7">
+                            <p class="value">{{hallmark.experience}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <img class="homepage-image" src="static/images/coit-tower.jpg">
+                </div>
+            </div>
         </div>
+            {% endfor %}
     </div>
     <footer>
         <div class="footer">
