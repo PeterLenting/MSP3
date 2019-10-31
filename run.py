@@ -3,26 +3,33 @@ from bson.json_util import dumps, loads
 from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+import re
 
 app = Flask(__name__)
-app.config["MONGO_DBNAME"] = 'myTestDB'
-#app.config["MONGO_URI"] = 'mongodb+srv://OmeCor:OmeCor@myfirstcluster-sykdi.mongodb.net/task_manager?retryWrites=true&w=majority'
-app.config["MONGO_URI"] = 'mongodb+srv://OmeCor:OmeCor@myfirstcluster-sykdi.mongodb.net/myTestDB?retryWrites=true&w=majority'
+app.config["MONGO_DBNAME"] = 'on_the_road'
+app.config["MONGO_URI"] = 'mongodb+srv://OmeCor:OmeCor@myfirstcluster-sykdi.mongodb.net/on_the_road?retryWrites=true&w=majority'
 
 mongo = PyMongo(app)
 
-'''
-@app.route('/')
-@app.route('/get_index')
-def get_index():
-    experiences=mongo.db.myFirstMDB.find()
-    return render_template("index.html", index=loads(dumps(experiences)))
-'''
-@app.route('/')
-@app.route('/get_index')
-def get_index():
-    return render_template("index.html", myFirstMDB=mongo.db.myFirstMDB.find())
 
+@app.route('/')
+@app.route('/get_index')
+def get_index():
+    return render_template("index.html", additions=mongo.db.additions.find())
+
+@app.route('/search')
+def search():
+    """Provides logic for search bar"""
+    orig_query = request.args['query']
+    # using regular expression setting option for any case
+    query = {'$regex': re.compile('.*{}.*'.format(orig_query)), '$options': 'i'}
+    # find instances of the entered word
+    results = mongo.db.additions.find({
+        '$or': [
+            {'city': query},
+        ]
+    }).sort('current_date', -1)
+    return render_template('search.html', query=orig_query, results=results)
 
 @app.route('/addlocation')
 def addlocation():
@@ -31,8 +38,8 @@ def addlocation():
 
 @app.route('/insert_location', methods=['POST'])
 def insert_location():
-    myFirstMDB = mongo.db.myFirstMDB
-    myFirstMDB.insert_one(request.form.to_dict())
+    additions = mongo.db.additions
+    additions.insert_one(request.form.to_dict())
     return redirect("get_index")
 
 

@@ -1,66 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
+    {% extends 'base.html' %}
+    {% block content %}
 
-<head>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="discription" content="What do the famous places from Jack Kerouac's On the Road look like now?">
-    <meta name="keywords" content="Jack Kerouac, On the Road, Sal Paradise, Dean Moriarty, books, roadtrip, USA">
-    <meta name="author" content="Peter Lenting">
-
-    <!-- Style Sheets-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
-
-    <!-- Favicon File -->
-    <link rel="shortcut icon" type="image/png" href="static/images/favicon.jpg">
-
-    <!-- Page Title -->
-    <title>Chasing Jack Kerouac - Finding the most iconic places Sal and Dean roamed</title>
-
-</head>
-
-<body>
-       <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="{{ (url_for('get_index')) }}">Home </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ (url_for('about')) }}">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ (url_for('addlocation')) }}">Add location<span class="sr-only">(current)</span></a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-        <div class="jumbotron jumbotron-fluid">
-            <div class="container-fluid">
-                <h1 class="display-2">Chasing Jack Kerouac</h1>
-                <p class="lead">About 70 years ago Jack Kerouac travelled America.<br>
-                                He than wrote a book that inspired millions: On the Road.<br>
-                                What do the places Sal Paradise and Dean Moriarty roamed look like now?<br>
-                                Check it out right here and add your own experience!
-                </p>
-            </div>
-        </div>
-    </header>
-    <div class="container-fluid black-background form-color">
+    <div class="container-fluid black-background form-color content">
         <form action="{{url_for('insert_location')}}" method="POST">
             <div class="form-row">
                 <div class="form-group col-md-4">
                     <label for="inputCity">City</label>
-                    <select id="city" name="city" class="form-control">
+                    <select id="city" name="city" class="form-control" required>
                         <option selected>Choose...</option>
                         <option>New York City (NY)</option>
                         <option>Denver (CO)</option>
@@ -74,17 +20,22 @@
                 </div>
                 <div class="form-group col-md-4">
                     <label for="inputCity">Location</label>
-                    <input type="text" id="location" name="location" class="form-control" placeholder="What specific place are we talking about?">
+                    <input type="text" id="location" name="location" class="form-control" placeholder="What specific place are we talking about?" required>
                 </div>
                 <div class="form-group col-md-4">
-                    <label for="inputCity">Date</label>
-                    <input type="text" id="date" name="date" class="form-control" placeholder="mm/dd/yy">
+                    <label for="inputDate">Date of experience</label>
+                    <div class="input-group date" id="datetimepicker4" data-target-input="nearest">
+                        <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker4" id="date" name="date" required/>
+                        <div class="input-group-append" data-target="#datetimepicker4" data-toggle="datetimepicker">
+                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="inputPart">Part of the book</label>
-                    <select id="part_of_book" name="part_of_book" class="form-control">
+                    <select id="part_of_book" name="part_of_book" class="form-control" required>
                         <option selected>Choose...</option>
                         <option>Part 1</option>
                         <option>Part 2</option>
@@ -94,7 +45,7 @@
                 </div>
                 <div class="form-group col-md-6">
                     <label for="inputChapter">Chapter of the book</label>
-                    <select id="chapter_in_book" name="chapter_in_book" class="form-control">
+                    <select id="chapter_in_book" name="chapter_in_book" class="form-control" required>
                         <option selected>Choose...</option>
                         <option>Chapter 1</option>
                         <option>Chapter 2</option>
@@ -116,17 +67,17 @@
             <div class="form-row">
                 <div class="form-group col-md-12">
                     <label for="inputQuote">Quote in book</label>
-                    <input type="text" class="form-control" id="quote_in_book" name="quote_in_book" placeholder="What does Jack Kerouac write about this place?">
+                    <input type="text" class="form-control" id="quote_in_book" name="quote_in_book" placeholder="What does Jack Kerouac write about this place?" required>
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-3">
                     <label for="inputName">My name</label>
-                    <input type="text" class="form-control" id="name_visitor" name="name_visitor" placeholder="What's your name?">
+                    <input type="text" class="form-control" id="name_visitor" name="name_visitor" placeholder="What's your name?" required>
                 </div>
                 <div class="form-group col-md-9">
                     <label for="inputExperience">My experience</label>
-                    <input type="text" class="form-control" id="experience" name="experience" placeholder="Tell us about your own experience">
+                    <input type="text" class="form-control" id="experience" name="experience" placeholder="Tell us about your own experience" required>
                 </div>
             </div>
             <div class="submit-button">
@@ -134,12 +85,5 @@
             </div>
         </form>
      </div>
-    <footer>
-        <div class="footer">
-            <p>Copyright and stuf like that, maybe some social buttons</p>
-        </div>
-    </footer>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js "></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js "></script>
-</body>
-</html>
+
+    {% endblock %}

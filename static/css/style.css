@@ -16,6 +16,11 @@
     color:#00b0f0;
 }
 
+.btn-search {
+    background-color:#00b0f0;
+    color: #fffdcc;
+}
+
 .bg-dark {
     background-color: black!important;
 }
@@ -43,7 +48,7 @@ body {
     background-color:  #00b0f0;
     color: black;
     font-weight: bold;
-    margin-bottom: 2px;
+    margin-bottom: 10px;
 }
 
 .submit-button {

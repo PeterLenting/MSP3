@@ -1,0 +1,21 @@
+    {% extends 'base.html' %}
+    {% block content %}
+
+    <div class="container-fluid">
+       <div class="row">
+        <h2>What do we have for {{ query }}:</h2>
+        </div>
+        <div>
+            {% for addition in additions %}
+                <div>
+                    <p data-toggle="collapse" href="#{{addition.name}}" aria-expanded="false"><i class="fas fa-angle-down"></i>
+                        {{addition.experience}}<br>
+                        {{addition.city}}<br>
+                        <span>{{addition.date}} | Reported by: {{additon.name}}</span>
+                    </p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    {% endblock %}

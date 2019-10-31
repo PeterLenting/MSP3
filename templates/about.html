@@ -1,63 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
+    {% extends 'base.html' %}
+    {% block content %}
 
-<head>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="discription" content="What do the famous places from Jack Kerouac's On the Road look like now?">
-    <meta name="keywords" content="Jack Kerouac, On the Road, Sal Paradise, Dean Moriarty, books, roadtrip, USA">
-    <meta name="author" content="Peter Lenting">
-
-    <!-- Style Sheets-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
-
-    <!-- Favicon File -->
-    <link rel="shortcut icon" type="image/png" href="static/images/favicon.jpg">
-
-    <!-- Page Title -->
-    <title>Chasing Jack Kerouac - Finding the most iconic places Sal and Dean roamed</title>
-
-</head>
-
-<body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="{{ (url_for('get_index')) }}">Home </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ (url_for('about')) }}">About <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ (url_for('addlocation')) }}">Add location</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-        <div class="jumbotron jumbotron-fluid">
-            <div class="container-fluid">
-                <h1 class="display-2">Chasing Jack Kerouac</h1>
-                <p class="lead">About 70 years ago Jack Kerouac travelled America.<br>
-                                He than wrote a book that inspired millions: On the Road.<br>
-                                What do the places Sal Paradise and Dean Moriarty roamed look like now?<br>
-                                Check it out right here and add your own experience!
-                </p>
-            </div>
-        </div>
-    </header>
-         <div class="container-fluid">
+         <div class="container-fluid content">
             <div class="row black-background main-content">
-                <div class="col-12"><h1 id="headerAbout">About</h1></div>
+                <div class="col-12 yellow-underline"><h1 id="headerAbout">About</h1></div>
             </div>
                 <div class="row about black-background main-content">
                     <div class="col-8"><p>This page is made for fans of On the Road, the classic noval written bij Jack Kerouac and first publiced in 1957.
@@ -74,12 +20,4 @@
                 </div>
          </div>
 
-    <footer>
-        <div class="footer">
-            <p>Copyright and stuf like that, maybe some social buttons</p>
-        </div>
-    </footer>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js "></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js "></script>
-</body>
-</html>
+    {% endblock %}
