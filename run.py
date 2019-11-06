@@ -11,10 +11,15 @@ app.config["MONGO_URI"] = 'mongodb+srv://OmeCor:OmeCor@myfirstcluster-sykdi.mong
 
 mongo = PyMongo(app)
 
-
 @app.route('/')
 @app.route('/get_index')
 def get_index():
+    return render_template("index.html", additions=mongo.db.additions.find())
+
+@app.route('/delete_addition/<hallmark_id>')
+def delete_addition(hallmark_id):
+    additions = mongo.db.additions
+    additions.remove({'_id': ObjectId(hallmark_id)})
     return render_template("index.html", additions=mongo.db.additions.find())
 
 @app.route('/search')
@@ -30,6 +35,7 @@ def search():
         ]
     }).sort('current_date', -1)
     return render_template('search.html', query=orig_query, results=results)
+
 
 @app.route('/addlocation')
 def addlocation():
@@ -47,6 +53,9 @@ def insert_location():
 def about():
     return render_template("about.html")
 
+@app.route('/edit_addition')
+def edit_addition():
+    return render_template("editaddition.html")
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),

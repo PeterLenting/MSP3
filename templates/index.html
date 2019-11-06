@@ -1,77 +1,80 @@
     {% extends 'base.html' %}
     {% block content %}
 
-    <div class="container-fluid">
+
         {% for hallmark in additions %}
-        <div class="content">
-            <div class="row black-background header-content">
-                <div class="col-12">
-                    <div class="row yellow-underline">
-                        <div class="col-4">
+        <div class="content black-background">
+            <div class="row header-content">
+                <div class="col-12 yellow-underline" id="no-padding">
+                    <div class="row padding-left-mobile">
+                        <div class="col-6 col-md-3" id="no-padding">
                             <span class="object">City: </span><br>
                             <span class="value">{{hallmark.city}}</span>
                         </div>
 
-                        <div class="col-4">
+                        <div class="col-6 col-md-3" id="no-padding">
                             <span class="object">Location: </span><br>
                             <span class="value">{{hallmark.location}}</span>
                         </div>
 
-                        <div class="col-4">
+                        <div class="col-6 col-md-3" id="no-padding">
                             <span class="object">Visit date: </span><br>
                             <span class="value">{{hallmark.date}}</span>
+                        </div>
+                        <div class="col-6 col-md-3" id="no-padding">
+                            <span class="object">Name visitor: </span><br>
+                            <span class="value">{{hallmark.name_visitor}}</span>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="row black-background main-content">
-                <div class="col-8">
+            <div class="row main-content padding-left">
+                <div class="col-md-6" id="no-padding">
                     <div class="row">
-                        <div class="col-5">
+                        <div class="col-md-3" id="no-padding">
                             <p class="object">Part of book:</p>
                         </div>
-                        <div class="col-7">
+                        <div class="col-md-9" id="no-padding">
                             <p class="value">{{hallmark.part_of_book}}</p>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-5">
+                        <div class="col-md-3" id="no-padding">
+                            <p class="object">Quote in book:</p>
+                        </div>
+                        <div class="col-md-9" id="no-padding">
+                            <p class="value">{{hallmark.quote_in_book}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6" id="no-padding">
+                    <div class="row">
+                        <div class="col-md-3" id="no-padding">
                             <p class="object">Chapter in book:</p>
                         </div>
-                        <div class="col-7">
+                        <div class="col-md-9" id="no-padding">
                             <p class="value">{{hallmark.chapter_in_book}}</p>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-5">
-                            <p class="object">Quote in book:</p>
+                        <div class="col-md-3" id="no-padding">
+                            <p class="object">Own experience:</p>
                         </div>
-                        <div class="col-7">
-                            <p class="value">{{hallmark.quote_in_book}}</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                            <div class="col-5">
-                                <p class="object">Name visitor:</p>
-                            </div>
-                            <div class="col-7">
-                                <p class="value">{{hallmark.name_visitor}}</p>
-                                </div>
-                            </div>
-                    <div class="row">
-                        <div class="col-5">
-                            <p class="object">Experience:</p>
-                        </div>
-                        <div class="col-7">
+                        <div class="col-md-9" id="no-padding">
                             <p class="value">{{hallmark.experience}}</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-4">
-                    <img class="homepage-image" src="static/images/coit-tower.jpg">
+            </div>
+            <div class="row main-content">
+                <div class="col-12 text-center" id="no-padding">
+                    <div class="submit-button">
+                        <button class="btn btn-primary"><a href="{{url_for('edit_addition')}}">Edit</a></button>
+                        <button class="btn btn-primary"><a href="{{url_for('delete_addition', hallmark_id=hallmark._id)}}">Delete</a></button>
+                    </div>
                 </div>
             </div>
         </div>
+
             {% endfor %}
-    </div>
     {% endblock %}

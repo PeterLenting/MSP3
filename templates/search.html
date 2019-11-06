@@ -8,9 +8,9 @@
         <div>
             {% for addition in additions %}
                 <div>
-                    <p data-toggle="collapse" href="#{{addition.name}}" aria-expanded="false"><i class="fas fa-angle-down"></i>
+                    <p href="#{{addition.name}}">
                         {{addition.experience}}<br>
-                        {{addition.city}}<br>
+                        {{hallmark.city}}<br>
                         <span>{{addition.date}} | Reported by: {{additon.name}}</span>
                     </p>
                 </div>
