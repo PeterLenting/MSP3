@@ -17,7 +17,7 @@
     <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
 
     <!-- Favicon File -->
-    <link rel="shortcut icon" type="image/png" href="static/images/favicon.jpg">
+    <link rel="shortcut icon" type="image/jpg" href="static/images/favicon.jpg">
 
     <!-- Page Title -->
     <title>Chasing Jack Kerouac - Finding the most iconic places Sal and Dean roamed</title>
@@ -41,13 +41,9 @@
                             <a class="nav-link" href="{{ (url_for('about')) }}">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ (url_for('addlocation')) }}">Add location</a>
+                            <a class="nav-link" href="{{ (url_for('add_addition')) }}">Add addition</a>
                         </li>
                     </ul>
-                    <form class="form-inline my-2 my-lg-0" action="{{ url_for('search') }}">
-                        <input class="form-control mr-sm-2" name="query" type="text" placeholder="Search" aria-label="Search" id="search-bar"/>&nbsp;
-                        <button class="btn btn-search my-2 my-sm-0" type="submit">Search</button>
-                    </form>
                 </div>
             </nav>
             <div class="jumbotron jumbotron-fluid">

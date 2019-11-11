@@ -16,11 +16,6 @@ mongo = PyMongo(app)
 def get_index():
     return render_template("index.html", additions=mongo.db.additions.find())
 
-@app.route('/delete_addition/<hallmark_id>')
-def delete_addition(hallmark_id):
-    additions = mongo.db.additions
-    additions.remove({'_id': ObjectId(hallmark_id)})
-    return render_template("index.html", additions=mongo.db.additions.find())
 
 @app.route('/search')
 def search():
@@ -33,13 +28,15 @@ def search():
         '$or': [
             {'city': query},
         ]
-    }).sort('current_date', -1)
+    }).sort('date', -1)
     return render_template('search.html', query=orig_query, results=results)
 
 
-@app.route('/addlocation')
-def addlocation():
-    return render_template("addlocation.html")
+@app.route('/add_addition')
+def add_addition():
+    categories = mongo.db.categories.find().sort('category_part', 1)
+    chapters =  mongo.db.chapters.find().sort('chapter', 1)
+    return render_template('addaddition.html',  categories=categories, chapters=chapters)
 
 
 @app.route('/insert_location', methods=['POST'])
@@ -53,9 +50,22 @@ def insert_location():
 def about():
     return render_template("about.html")
 
-@app.route('/edit_addition')
-def edit_addition():
-    return render_template("editaddition.html")
+
+@app.route('/delete_addition/<addition_id>')
+def delete_addition(addition_id):
+    additions = mongo.db.additions
+    additions.remove({'_id': ObjectId(addition_id)})
+    return render_template("index.html", additions=mongo.db.additions.find())
+
+
+@app.route('/edit_addition/<addition_id>')
+def edit_addition(addition_id):
+    the_addition = mongo.db.additions.find_one({'_id': ObjectId(addition_id)})
+    all_categories = mongo.db.categories.find()
+    all_chapters = mongo.db.chapters.find()
+    return render_template("editaddition.html", additions=the_addition,
+                           categories=all_categories, chapters=all_chapters, addition=the_addition)
+
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),

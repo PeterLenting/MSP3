@@ -1,31 +1,21 @@
     {% extends 'base.html' %}
     {% block content %}
 
-    <div class="black-background form-color content">
-        <form action="{{url_for('insert_location')}}" method="POST">
+ <div class="black-background form-color content">
+        <form action="{{url_for('edit_addition', addition_id=addition._id)}}" method="POST">
             <div class="form-row">
                 <div class="form-group col-md-4">
                     <label for="inputCity">City</label>
-                    <select id="city" name="city" class="form-control" required>
-                        <option selected>Choose...</option>
-                        <option>New York City (NY)</option>
-                        <option>Denver (CO)</option>
-                        <option>Mexico City (MEX)</option>
-                        <option>San Francisco (CA)</option>
-                        <option>Los Angeles (CA)</option>
-                        <option>Chicago (IL)</option>
-                        <option>Pittsburgh (PA)</option>
-                        <option>Other</option>
-                    </select>
+                    <input type="text" id="city" name="city" class="form-control" placeholder="What city are we talking about?" required value={{additions.city}}>
                 </div>
                 <div class="form-group col-md-4">
                     <label for="inputCity">Location</label>
-                    <input type="text" id="location" name="location" class="form-control" placeholder="What specific place are we talking about?" required>
+                    <input type="text" id="location" name="location" class="form-control" placeholder="What specific place are we talking about?" required value={{additions.location}}>
                 </div>
                 <div class="form-group col-md-4">
                     <label for="inputDate">Date of experience</label>
                     <div class="input-group date" id="datetimepicker4" data-target-input="nearest">
-                        <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker4" id="date" name="date" required/>
+                        <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker4" id="date" name="date" required value={{additions.date}}/>
                         <div class="input-group-append" data-target="#datetimepicker4" data-toggle="datetimepicker">
                             <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                         </div>
@@ -36,53 +26,50 @@
                 <div class="form-group col-md-6">
                     <label for="inputPart">Part of the book</label>
                     <select id="part_of_book" name="part_of_book" class="form-control" required>
-                        <option selected>Choose...</option>
-                        <option>Part 1</option>
-                        <option>Part 2</option>
-                        <option>Part 3</option>
-                        <option>Part 4</option>
+                        <option value="" disabled selected>Choose...</option>
+                        {% for category_part in categories %}
+                            {% if category_part.category_part == additions.part_of_book %}
+                            <option value="{{category_part.category_part}}" selected >{{category_part.category_part}}</option>
+                            {% else %}
+                            <option value="{{category_part.category_part}}">{{category_part.category_part}}</option>
+                          {% endif %}
+                        {% endfor %}
                     </select>
                 </div>
                 <div class="form-group col-md-6">
                     <label for="inputChapter">Chapter of the book</label>
                     <select id="chapter_in_book" name="chapter_in_book" class="form-control" required>
-                        <option selected>Choose...</option>
-                        <option>Chapter 1</option>
-                        <option>Chapter 2</option>
-                        <option>Chapter 3</option>
-                        <option>Chapter 4</option>
-                        <option>Chapter 5</option>
-                        <option>Chapter 6</option>
-                        <option>Chapter 7</option>
-                        <option>Chapter 8</option>
-                        <option>Chapter 9</option>
-                        <option>Chapter 10</option>
-                        <option>Chapter 11</option>
-                        <option>Chapter 12</option>
-                        <option>Chapter 13</option>
-                        <option>Chapter 14</option>
+                        <option value="" disabled selected>Choose...</option>
+                        {% for chapter in chapters %}
+                            {% if additions.chapter_in_book == chapter.chapter %}
+                            <option value="{{chapter.chapter}}" selected >{{chapter.chapter}}</option>
+                            {% else %}
+                            <option value="{{chapter.chapter}}">{{chapter.chapter}}</option>
+                          {% endif %}
+                        {% endfor %}
                     </select>
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-12">
                     <label for="inputQuote">Quote in book</label>
-                    <input type="text" class="form-control" id="quote_in_book" name="quote_in_book" placeholder="What does Jack Kerouac write about this place?" required>
+                    <input type="text" class="form-control" id="quote_in_book" name="quote_in_book" placeholder="What does Jack Kerouac write about this place?" required value={{additions.quote_in_book}}>
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-3">
                     <label for="inputName">My name</label>
-                    <input type="text" class="form-control" id="name_visitor" name="name_visitor" placeholder="What's your name?" required>
+                    <input type="text" class="form-control" id="name_visitor" name="name_visitor" placeholder="What's your name?" required value={{additions.name_visitor}}>
                 </div>
                 <div class="form-group col-md-9">
                     <label for="inputExperience">My experience</label>
-                    <input type="text" class="form-control" id="experience" name="experience" placeholder="Tell us about your own experience" required>
+                    <input type="text" class="form-control" id="experience" name="experience" placeholder="Tell us about your own experience" required value={{additions.experience}}>
                 </div>
             </div>
-            <div class="submit-button">
+            <div class="submit-button" id="center2">
             <button type="submit" class="btn btn-primary">Submit</button>
             </div>
         </form>
      </div>
+
   {% endblock %}

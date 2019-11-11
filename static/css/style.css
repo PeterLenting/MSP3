@@ -28,22 +28,8 @@
     border: 2px solid #00b0f0!important;
 }
 
-#search-bar {
-    width: 75%;
-}
-
-.btn-search {
-    background-color:#00b0f0;
-    color: #fffdcc;
-}
-
 .form-control {
     width: 75%;
-}
-
-.btn-search:hover {
-    background-color: #fffdcc;
-    color: #00b0f0;
 }
 
 .navbar-dark .navbar-toggler-icon {
@@ -238,9 +224,6 @@ body {
 .jumbotron {
     padding-top: 32px;
     padding-bottom: 32px;
-    }
-#search-bar {
-    width: auto;
     }
 .lead {
     margin-bottom: 20px;
