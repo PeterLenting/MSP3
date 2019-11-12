@@ -1,12 +1,9 @@
 # Chasing Jack Kerouac
 
 ## Introduction
-This application is a simple, interactive and fun game to test someone's knowledge. The game basically consists of a image and a textfield. When typing in the right answer in the textfield, the image flips and the right answer is shown. There is also a possibility to ask for a hint.
+This site is a simple, informative and fun page, build to let fans of Jack Kerouac’s novel On the Road inform each other about places from the book that can still be visited now.  Fans can add new locations, delete their posts, adjust them and of course read posts from other fans.
 
 ![Responsive game](https://raw.githubusercontent.com/PeterLenting/MSP3/master/static/images/mock-ups/responsive-test.jpg)
-
-This specific version of the game uses images from Pro Cycling Trumps (PCT). PCT is a British concept which basically contains of simple but fitting drawings of pro cyclists on playing cards. Naturally other images can be used as well.
-The design of the game is also very suited for learning a language; the player than has to type in the name of the object the image shows in the language he or she is learning.
 
 - [View the game here](https://peterlenting.github.io/second-milestone-project/index.html)
 - [View the Github Repository here](https://github.com/PeterLenting/MSP3)
@@ -40,75 +37,59 @@ The design of the game is also very suited for learning a language; the player t
 ## UX
 
 ### What is it?
-A clean, fast and well-arranged application, which gives the visitor a fun experience, an opportunity to upgrade their knowledge and to be interactive with, in this case, PCT.
-A single page application with a mobile first design. The game should be really simple and easy to play, but also fun and interactive.
+A clean, fast and well-arranged website, which gives the visitor more information about places from Jack Kerouac’s novel On the Road that can still be visited these days.  
+The site is really simple in use: anyone can add a new destination and tell about their experience.
 
 ### Who is the target audience?
-Anybody who likes Jack Kerouac's novel On the Road. It could be people who want to visit some location from the, or have already done so. But also people who are just curieus what the places look like these days.
+Anybody who likes Jack Kerouac's novel On the Road. It could be people who want to visit some location from the book, or have already done so. But also people who are just curieus what the places look like these days.
 
 ### Mock-ups
-[Mock-up of the mobile version of the game](https://raw.githubusercontent.com/PeterLenting/second-milestone-project/master/images/mock-ups/mobile-mock-up-anonymus-rider.jpg).
+[Mock-up of the mobile version of the game](https://raw.githubusercontent.com/PeterLenting/MSP3/master/static/images/mock-ups/mobile-mock-up.jpg).
 [Mock-up of the desktop version of the game](https://raw.githubusercontent.com/PeterLenting/second-milestone-project/master/images/mock-ups/desktop-mock-up-name-and-flag.jpg)
 
 As you can see there are some small diferences between the mock-up and actual game. On desktop I moved the aside to the right of the game, because it makes more sence to keep the actual game on the prominent left side. Besides that small changes are made to the lay-out. The yellow colour is chosen because yellow is the most iconic colour in cycling. It is the colour of the leadersjersey in the Tour de France. The darkblue and the orange contrast nicely and give the game a cheerfull look.
 
 ### User stories
 As a visitor, I want:
-1.	The ability to easily find and understand the controls of the game, so I can operate them easily.
-2.	To have the feeling I either got conformation of my great knowledge or have really learned something.
-3.	To get a feeling of real interaction while playing the game.
-4.	To enjoy myself.
-5.	To get recognition for my score, so I feel good or get stimulated to try again.
-6.	To get no errors while playing the game, so I can really get into it.
+1.	To read about the places Jack Kerouac wrote about in On the Road in order to find information about the way the places look now.
+2.	To be able to edit a post in order to make the information more complete.
+3.	To be able to delete a post when there is something wrong with it.
+4.	To write about my own experience in order to inform other people.
+5. 	To enjoy myself.
 
 ## Features
 
 ### Existing features
-**Who is this cyclist?** – The question this game is all about. What is the name of the cyclist shown in the image?
+**Home** – The home-page of the site. It shows the posts people have made. Under each post is a button which gives the option to edit and delete the post.
 
-**How to play?**  – Allows the user to find out more **About the game** and how to play it. On mobile by clicking a button that will guide the user to the rules of the game. On desktop the information is shown on the right of the screen.
+**About**  – The About-page tells the story of the site. Why did I make it and what is the purpose.
 
-**Let's play** – Allows the user to start playing the game by clicking on the button that says 'Let's Play'. The first of 10 images will be shown.
+**Add a post** – This page contains a form which makes it possible for anyone to add a post. All fields are required to make every post really add information for other visitors. 
 
-**Image** –  Every image shows a professional (ex-)cyclist with a recognisable haircut and the shirt in which he was most successful. The lower part of the card contains the score of the cyclist on six important qualities on a scale from 0-100. Next to his head are the big prices he won. The pink jersey for the Giro, the yellow one for the Tour, the red one for La Vuelta and the Roman pillar for the Monuments. The name of the cyclist and his nationality normally stand in the gray area at the top of the card, but are erased for the purpose of the game.
+**Edit** –  This button sends the user to the page where he or she can update any post.
 
-**Textfield** – Allows the user to give an answer by typing in the name of the cyclist.
+**Delete** – This buttons allows anyone to delete any post.
 
-**Submit** – Allows the user to send in his answer and have it checked. If the answer is correct, the image flips and the name and nationality of the cyclist are shown in the image. Beneath the image the message 'Yes, that's him!' is shown. If the answer is wrong, the image is blurred and the user gets the option to **Give Up** or to **Try Again**. After two wrong answers the message 'Sorry, no score' shows and no points are added to the **Score**.
+**Submit** – Allows the user to send in his form.
 
-**Give me a hint** – Allows the user to get a little help in finding the right answer by clicking the button that says 'Give me a Hint'. The image flips and the flag of the nation the cyclist comes from appears.
-
-**Try again** – Allows the user to try again after giving a first wrong answer. The image *unblurs*.
-
-**Give up** – Allows the user to give up by clicking the button that says 'Give Up'. The image flips and the right answer is shown, together with the message: 'Sorry, no score'.
-
-**Next challenge** – Allows the user to go to the next image by clicking on the button that says 'Next Challenge'. After 10 rounds the button leads the user to his final score.
-
-**Round** – Allows the user to see in which of the 10 rounds he is at any moment during the game by looking in the input-field beneath 'ROUND'.
-
-**Score** – Allows the user to see his score at any moment during the game by looking in the input-field field beneath 'SCORE'. On every round: if the first answer is right, three points will be added. A hint and a wrong answer cost one of those three points. After two wrong answers no points will be added.
-
-**Your Score** – Allows the user to see his final score by looking in the input-field next to 'Your Score' on the endpage.'
-
-**Score comment** – Allows the user to see a comment on his score. This varies from 'Maybe you should try again?' to 'You're a true champion'.
-
-**Play again** – Allows the user to play the game again by clicking on the button that says 'Play Again.
-
-**Footer** - Contains links to the social pages of Pro Cycling Trumps: Facebook, Instagram, Youtube and Twitter.
+**Footer** - The footer shows links to the social media accounts of Chasing Jack Kerouac. The links are empty now, since there are no social-accounts yet.
 
 ### Features left to implement
-1.	Search Function
-It would be nice to add a search-function, so visitors can search for specific city's or locations.
 
-2.	Registration Function
+1.	Add Photo’s
+It would be nice for the user to be able to add a photo to their post. That way they can show what the place they visited, actually looked like at that moment. The photo would off course also be shown on the website.
 
+2.	Log in
+In the current condition of the webpage anyone can make changes to all the posts. Off course it would be really nice to give people the option to make an account and make them log in before they can write, update and delete their post.
 
-3.	Option to upload video's
-In the current game the images are of the biggest icons of pro cyclings history. In this line there could also be a version with current cyclists, male and female. Or of former Tour de France or Tour of Flanders winners. The possibilities are endless.
-As said the images could be of any subject. From learning a language, to famous movi-posters, to ex-presidents, to car-models. Anything is possible.
+3.	Search
+By making it possible for users to search, they could just look at the places they are really interested in. In the future, when more posts are made, such a function would really add value to the site.
 
-4.	An option to 'like' a post from someone else
-By making it possible for players to share their score with their friends through social media and invite them to play the game, the involvement and the fun will grow even more.
+4.	Give likes or thumbs up
+It would be nice if users where able to let other users know whether they like the post someone made. That way people would know their work was appreciated and other visitors would know which posts are most popular. 
+
+5. 	Add social media accounts
+The links in the footer to the social media accounts of Chasing Jack Kerouac are empty for know, since there are no accounts. These accounts could really add to the interaction of the community of Kerouac-fans and helps them share their post.
 
 ## Technologies used
 •	HTML, CSS
@@ -133,11 +114,11 @@ By making it possible for players to share their score with their friends throug
 ## Testing
 
 ### Responsive testing
-The responsiveness of the page was tested at all times during the development of the site. Locally as well as on GITHUB pages using Chrome developer tools.
+The responsiveness of the page was tested at all times during the development of the site. Locally as well as in preview using Google Inspect.
 
 ### Manual testing
 
-I played the game myself and had other people playing it as well during the development. This is a reliable way of discovering whether everything works as it should.
+I created, read, updated and deleted posts myself and had other people testing it as well during the development. This is a reliable way of discovering whether everything works as it should.
 
 
 ### Improvements after testing

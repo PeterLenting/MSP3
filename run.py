@@ -3,13 +3,13 @@ from bson.json_util import dumps, loads
 from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
-import re
 
 app = Flask(__name__)
 app.config["MONGO_DBNAME"] = 'on_the_road'
 app.config["MONGO_URI"] = 'mongodb+srv://OmeCor:OmeCor@myfirstcluster-sykdi.mongodb.net/on_the_road?retryWrites=true&w=majority'
 
 mongo = PyMongo(app)
+
 
 @app.route('/')
 @app.route('/get_index')
@@ -30,20 +30,19 @@ def insert_location():
 
     # get the value and convert it into an interger
     value = int(request.form.get('chapter_in_book'))
-    value2 = int(request.form.get('part_of_book'))   
-
+    value2 = int(request.form.get('part_of_book'))
 
     # Generate the fields and insert
     additions.insert_one(
         {
-        'city':request.form.get('city'),
-        'chapter_in_book':value,
-        'location':request.form.get('location'),
-        'date': request.form.get('date'),
-        'part_of_book': value2,
-        'quote_in_book':request.form.get('quote_in_book'),
-        'name_visitor': request.form.get('name_visitor'),
-        'experience': request.form.get('experience'),
+            'city': request.form.get('city'),
+            'chapter_in_book': value,
+            'location': request.form.get('location'),
+            'date': request.form.get('date'),
+            'part_of_book': value2,
+            'quote_in_book': request.form.get('quote_in_book'),
+            'name_visitor': request.form.get('name_visitor'),
+            'experience': request.form.get('experience'),
         }
     )
     return render_template("index.html", additions=mongo.db.additions.find())
