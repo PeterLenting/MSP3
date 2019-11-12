@@ -3,7 +3,7 @@
 ## Introduction
 This application is a simple, interactive and fun game to test someone's knowledge. The game basically consists of a image and a textfield. When typing in the right answer in the textfield, the image flips and the right answer is shown. There is also a possibility to ask for a hint.
 
-![Responsive game](https://raw.githubusercontent.com/PeterLenting/MSP3/master/images/mock-ups/responsive-test.png)
+![Responsive game](https://raw.githubusercontent.com/PeterLenting/MSP3/master/static/images/mock-ups/responsive-test.jpg)
 
 This specific version of the game uses images from Pro Cycling Trumps (PCT). PCT is a British concept which basically contains of simple but fitting drawings of pro cyclists on playing cards. Naturally other images can be used as well.
 The design of the game is also very suited for learning a language; the player than has to type in the name of the object the image shows in the language he or she is learning.

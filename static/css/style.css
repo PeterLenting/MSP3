@@ -200,6 +200,14 @@ header {
     text-align: center;
 }
 
+.footer a{
+    padding-left: 25px;
+    padding-right: 25px;
+    color: #00b0f0;
+}
+
+
+
  @media(min-width: 1500px){
 body {
     margin-left: 200px;
