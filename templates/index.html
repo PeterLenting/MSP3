@@ -28,7 +28,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row main-content padding-left">
+            <div class="row main-content">
                 <div class="col-md-6" id="no-padding">
                     <div class="row">
                         <div class="col-md-3" id="no-padding">
@@ -69,8 +69,8 @@
             <div class="row main-content">
                 <div class="col-12 text-center" id="no-padding">
                     <div class="submit-button">
-                        <button class="btn btn-primary"><a href="{{url_for('edit_addition', addition_id=addition._id)}}">Edit</a></button>
-                        <button class="btn btn-primary"><a href="{{url_for('delete_addition', addition_id=addition._id)}}">Delete</a></button>
+                        <a href="{{url_for('edit_addition', addition_id=addition._id)}}" class="btn btn-primary">Edit</a>
+                        <a href="{{url_for('delete_addition', addition_id=addition._id)}}" class="btn btn-primary">Delete</a>
                     </div>
                 </div>
             </div>

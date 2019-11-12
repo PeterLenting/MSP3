@@ -84,7 +84,9 @@ body {
 
 .btn-primary a {
     color: black;
+    display: block;
 }
+
 
 .btn-primary:hover {
     background-color: #fffdcc;
@@ -172,8 +174,8 @@ body {
 }
 
 #no-padding {
-    padding-left: 0;
-    padding-right: 0;
+    padding-left: 3px;
+    padding-right: 3px;
 }
 
 .display-2 {

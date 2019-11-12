@@ -17,33 +17,36 @@ def get_index():
     return render_template("index.html", additions=mongo.db.additions.find())
 
 
-@app.route('/search')
-def search():
-    """Provides logic for search bar"""
-    orig_query = request.args['query']
-    # using regular expression setting option for any case
-    query = {'$regex': re.compile('.*{}.*'.format(orig_query)), '$options': 'i'}
-    # find instances of the entered word
-    results = mongo.db.additions.find({
-        '$or': [
-            {'city': query},
-        ]
-    }).sort('date', -1)
-    return render_template('search.html', query=orig_query, results=results)
-
-
 @app.route('/add_addition')
 def add_addition():
     categories = mongo.db.categories.find().sort('category_part', 1)
-    chapters =  mongo.db.chapters.find().sort('chapter', 1)
+    chapters = mongo.db.chapters.find().sort('chapter', 1)
     return render_template('addaddition.html',  categories=categories, chapters=chapters)
 
 
 @app.route('/insert_location', methods=['POST'])
 def insert_location():
     additions = mongo.db.additions
-    additions.insert_one(request.form.to_dict())
-    return redirect("get_index")
+
+    # get the value and convert it into an interger
+    value = int(request.form.get('chapter_in_book'))
+    value2 = int(request.form.get('part_of_book'))   
+
+
+    # Generate the fields and insert
+    additions.insert_one(
+        {
+        'city':request.form.get('city'),
+        'chapter_in_book':value,
+        'location':request.form.get('location'),
+        'date': request.form.get('date'),
+        'part_of_book': value2,
+        'quote_in_book':request.form.get('quote_in_book'),
+        'name_visitor': request.form.get('name_visitor'),
+        'experience': request.form.get('experience'),
+        }
+    )
+    return render_template("index.html", additions=mongo.db.additions.find())
 
 
 @app.route('/about')
@@ -60,14 +63,13 @@ def delete_addition(addition_id):
 
 @app.route('/edit_addition/<addition_id>')
 def edit_addition(addition_id):
-    the_addition = mongo.db.additions.find_one({'_id': ObjectId(addition_id)})
-    all_categories = mongo.db.categories.find()
-    all_chapters = mongo.db.chapters.find()
-    return render_template("editaddition.html", additions=the_addition,
-                           categories=all_categories, chapters=all_chapters, addition=the_addition)
+    addition = mongo.db.additions.find_one({'_id': ObjectId(addition_id)})
+    categories = mongo.db.categories.find()
+    chapters = mongo.db.chapters.find()
+    return render_template("editaddition.html", additions=addition, categories=categories, chapters=chapters)
 
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
-            debug=True)
+            debug=False)

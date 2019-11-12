@@ -2,20 +2,20 @@
     {% block content %}
 
  <div class="black-background form-color content">
-        <form action="{{url_for('edit_addition', addition_id=addition._id)}}" method="POST">
+        <form action="{{url_for('edit_addition', addition_id=additions._id)}}" method="POST">
             <div class="form-row">
                 <div class="form-group col-md-4">
                     <label for="inputCity">City</label>
-                    <input type="text" id="city" name="city" class="form-control" placeholder="What city are we talking about?" required value={{additions.city}}>
+                    <input type="text" id="city" name="city" class="form-control" placeholder="What city are we talking about?" required value="{{additions.city}}">
                 </div>
                 <div class="form-group col-md-4">
                     <label for="inputCity">Location</label>
-                    <input type="text" id="location" name="location" class="form-control" placeholder="What specific place are we talking about?" required value={{additions.location}}>
+                    <input type="text" id="location" name="location" class="form-control" placeholder="What specific place are we talking about?" required value="{{additions.location}}">
                 </div>
                 <div class="form-group col-md-4">
                     <label for="inputDate">Date of experience</label>
                     <div class="input-group date" id="datetimepicker4" data-target-input="nearest">
-                        <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker4" id="date" name="date" required value={{additions.date}}/>
+                        <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker4" id="date" name="date" required value="{{additions.date}}"/>
                         <div class="input-group-append" data-target="#datetimepicker4" data-toggle="datetimepicker">
                             <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                         </div>
@@ -53,17 +53,17 @@
             <div class="form-row">
                 <div class="form-group col-md-12">
                     <label for="inputQuote">Quote in book</label>
-                    <input type="text" class="form-control" id="quote_in_book" name="quote_in_book" placeholder="What does Jack Kerouac write about this place?" required value={{additions.quote_in_book}}>
+                    <input type="text" class="form-control" id="quote_in_book" name="quote_in_book" placeholder="What does Jack Kerouac write about this place?" required value="{{additions.quote_in_book}}"">
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-3">
                     <label for="inputName">My name</label>
-                    <input type="text" class="form-control" id="name_visitor" name="name_visitor" placeholder="What's your name?" required value={{additions.name_visitor}}>
+                    <input type="text" class="form-control" id="name_visitor" name="name_visitor" placeholder="What's your name?" required value="{{additions.name_visitor}}">
                 </div>
                 <div class="form-group col-md-9">
                     <label for="inputExperience">My experience</label>
-                    <input type="text" class="form-control" id="experience" name="experience" placeholder="Tell us about your own experience" required value={{additions.experience}}>
+                    <input type="text" class="form-control" id="experience" name="experience" placeholder="Tell us about your own experience" required value="{{additions.experience}}">
                 </div>
             </div>
             <div class="submit-button" id="center2">
