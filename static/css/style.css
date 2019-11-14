@@ -1,3 +1,24 @@
+.modal-content {
+    background-color: #fffdcc;
+}
+
+#black-border {
+    border: 2px solid black;
+}
+
+.modal-footer {
+    display: auto;
+    border: none;
+}
+
+.modal-body {
+    font-weight: bold;
+}
+
+.modal-header {
+    border: none;
+}
+
 .container-fluid {
     padding: 0;
 }
@@ -147,8 +168,12 @@ body {
     margin-bottom: 8px;
 }
 
+.hide {
+    display: none;
+}
 .about {
     color: #fffdcc;
+    padding-top: 10px;
 }
 
 #text {

@@ -2,7 +2,7 @@
     {% block content %}
 
  <div class="black-background form-color content">
-        <form action="{{url_for('edit_addition', addition_id=additions._id)}}" method="POST">
+        <form action="{{url_for('update_addition', addition_id=additions._id)}}" method="POST">
             <div class="form-row">
                 <div class="form-group col-md-4">
                     <label for="inputCity">City</label>
