@@ -26,7 +26,7 @@ def about():
 def delete_addition(addition_id):
     additions = mongo.db.additions
     additions.remove({'_id': ObjectId(addition_id)})
-    return render_template("index.html", additions=mongo.db.additions.find())
+    return redirect(url_for('get_index'))
 
 
 @app.route('/add_addition')

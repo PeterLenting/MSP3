@@ -68,7 +68,7 @@ As a visitor, I want:
 
 **Edit** –  This button sends the user to the page where he or she can update any post.
 
-**Delete** – This buttons allows anyone to delete any post.
+**Delete** – This buttons allows anyone to delete any post. When clicked a modal pops up that ask the user if he/she is sure. 'Yes' deletes the post, 'No' sends him/her back to the homepage.
 
 **Submit** – Allows the user to send in his form.
 
@@ -122,13 +122,13 @@ I created, read, updated and deleted posts myself and had other people testing i
 
 
 ### Improvements after testing
-•   Walking through the game the first time, I noticed it would be really easy to find the answer in Google Chrome developer tools or by rightclicking the image, if I had the name of the cyclist in the name of the image. So I decided to give every image a number instead.
+•   Clicking the delete-button just deleted the post. At first I thought I would create and pop-up to say 'Your post has been deleted', but then I decided it would be better to make sure the user wanted to delete the post.  
 
-•   A bug that came up in the end after I had made some adjustments to the rungame()-function was that the names of all the cyclists in the game were seen as correct on all images. This of course was not the way the game is intended. I fixed this by making indexOf() a Boolean by adding '> -1'.
+•   In the Date of visit calander it was possible to pick a future date. That of course doesn't make much sense, so now only dates in the past can be picked.
 
-•   It was possible to adjust 'Round' and 'Score' manually. This of course was not the intention and is fixed by making the input 'readonly'.
+•   At first de Date of visit determined the order of the posts on the homepage. It makes more sense to put the new posts on top, so now Current date determines the order.
 
-•   It turned out cyclist-14- empty.png was the same image as cyclist-14.png. This was of course changed, so cyclist-14-empty.png was indeed without the name and the nation of the cyclist.
+•   When using the update-function, the Current date wasn't updated the right way. Adding "current_date = (request.form.get('current_date'))" fixed that problem. 
 
 ### Browsers
 The game was tested in Chrome, Internet Explorer and Firefox.

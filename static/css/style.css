@@ -27,6 +27,10 @@
     margin: 0;
 }
 
+.mobile-align {
+    text-align: center;
+}
+
 .navbar {
     font-family: 'Lato', sans-serif;
     font-weight: bold;
@@ -271,5 +275,8 @@ body {
     }
 .btn-primary {
     font-size: 1rem;
+    }
+.mobile-align {
+    text-align: auto;
     }
 }

@@ -2,22 +2,25 @@ $(document).ready(function () {
     /* set the date */
     $(function () {
         $('#datetimepicker4').datetimepicker({
-            format: 'L',
+            format: 'DD/MM/YYYY',
             maxDate: moment()
         });
     });
 
     $(function () {
-        $('#datetimepicker1').datetimepicker({
-            date: moment()
+        $('#datetimepicker5').datetimepicker({
+            date: moment(),
+            format: 'DD/MM/YYYY, HH:mm'
         });
     });
 
 
-    $(document).on("click", ".current-post", function () {
-        console.log("event fired")
-        var UserName = $(this).attr("id");
-        console.log(UserName)
-        $("#current").attr("href", "`{{url_for('delete_addition')}} + ${UserName}`");
+    $(".current-post").on("click", function () {
+        let addition_id = $(this).attr("id");
+        let currentPath = window.location.pathname;
+        currentPath = "/delete_addition/" + addition_id;
+        $("#confirm-delete").on("click", function () {
+            $(this).attr("href", currentPath).submit();
+        });
     });
 });

@@ -4,28 +4,25 @@
     <div class="black-background form-color content">
         <form action="{{url_for('insert_addition')}}" method="POST">
             <div class="form-row">
-                <div class="form-group col-md-4">
+                <div class="form-group col-md-6 col-lg-2">
+                    <label for="inputDate">Current Date</label>
+                    <div class="input-group date" id="datetimepicker5" data-target-input="nearest">
+                        <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker5" id="current_date" name="current_date" readonly/>
+                    </div>
+                </div>
+                <div class="form-group col-md-6 col-lg-4">
                     <label for="inputCity">City</label>
                     <input type="text" id="city" name="city" class="form-control" placeholder="What city are we talking about?" required>
                 </div>
-                <div class="form-group col-md-4">
+                <div class="form-group col-md-6 col-lg-4">
                     <label for="inputLocation">Location</label>
                     <input type="text" id="location" name="location" class="form-control" placeholder="What specific place are we talking about?" required>
                 </div>
-                <div class="form-group col-md-2">
+                <div class="form-group col-md-6 col-lg-2">
                     <label for="inputDate">Date of experience</label>
                     <div class="input-group date" id="datetimepicker4" data-target-input="nearest">
                         <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker4" id="date" name="date" required/>
                         <div class="input-group-append" data-target="#datetimepicker4" data-toggle="datetimepicker">
-                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-                        </div>
-                    </div>
-                </div>
-               <div class="form-group col-md-2">
-                    <label for="inputDate">Current Date</label>
-                    <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
-                        <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker1" id="current_date" name="current_date" readonly/>
-                        <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
                             <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                         </div>
                     </div>
