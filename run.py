@@ -1,5 +1,4 @@
 import os
-from bson.json_util import dumps, loads
 from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
@@ -74,18 +73,19 @@ def update_addition(addition_id):
     addition = mongo.db.additions
     value = int(request.form.get('chapter_in_book'))
     value2 = int(request.form.get('part_of_book'))
-    addition.update({'_id' : ObjectId(addition_id)},
-      {
-        'city': request.form.get('city'),
-        'chapter_in_book': value,
-        'location': request.form.get('location'),
-        'current_date': request.form.get('current_date'),
-        'date': request.form.get('date'),
-        'part_of_book': value2,
-        'quote_in_book': request.form.get('quote_in_book'),
-        'name_visitor': request.form.get('name_visitor'),
-        'experience': request.form.get('experience'),
-    })
+    addition.update({'_id': ObjectId(addition_id)},
+        {
+            'city': request.form.get('city'),
+            'chapter_in_book': value,
+            'location': request.form.get('location'),
+            'current_date': request.form.get('current_date'),
+            'date': request.form.get('date'),
+            'part_of_book': value2,
+            'quote_in_book': request.form.get('quote_in_book'),
+            'name_visitor': request.form.get('name_visitor'),
+            'experience': request.form.get('experience'),
+        }
+    )
     return redirect(url_for('get_index'))
 
 

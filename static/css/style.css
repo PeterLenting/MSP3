@@ -1,13 +1,39 @@
-.modal-content {
-    background-color: #fffdcc;
+/* GENERAL*/
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: #F8F8F8;
 }
 
-#black-border {
-    border: 2px solid black;
+.container-fluid {
+    padding: 0;
+}
+
+.row {
+    margin: 0;
+}
+
+.bg-dark {
+    background-color: black!important;
+}
+
+.hide {
+    display: none;
+}
+
+.black-background {
+    background-color: black;
+    border-radius: 10px;
+}
+
+/* MODAL */
+
+.modal-content {
+    background-color: #fffdcc;
+    border: 2px solid #00b0f0;
 }
 
 .modal-footer {
-    display: auto;
     border: none;
 }
 
@@ -19,16 +45,47 @@
     border: none;
 }
 
-.container-fluid {
-    padding: 0;
-}
-
-.row {
-    margin: 0;
+.black-border {
+    border: 2px solid black! important;
+    box-shadow: 3px 5px;
 }
 
 .mobile-align {
     text-align: center;
+}
+
+/* NAVBAR */
+
+header {
+    margin-top: 1px;
+}
+
+/*
+.header-content {
+    font-size: 1.1em;
+}
+*/
+
+.jumbotron {
+  background-image: url("/static/images/denver-sf-mobile2.jpg");
+  background-size: 100% 100%;
+  color: White;
+  text-shadow: -1px 0 #00b0f0, 0 1px #00b0f0, 1px 0 #00b0f0, 0 -1px #00b0f0;
+  text-align: center;
+  border-radius: 10px;
+  margin-bottom: 0;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.display-2 {
+    margin-bottom: 20px;
+}
+
+.lead {
+    text-shadow: none;
+    margin-bottom: 8px;
+    font-size: 1.2rem;
 }
 
 .navbar {
@@ -53,37 +110,8 @@
     border: 2px solid #00b0f0!important;
 }
 
-.form-control {
-    width: 75%;
-}
-
 .navbar-dark .navbar-toggler-icon {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 176, 240, 0.7)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
-}
-
-.bg-dark {
-    background-color: black!important;
-}
-
-body {
-    font-family: 'Lato', sans-serif;
-    background-color: #F8F8F8;
-}
-
-.jumbotron {
-  background-image: url("/static/images/denver-sf-mobile2.jpg");
-  background-size: 100% 100%;
-  color: White;
-  text-shadow: -1px 0 #00b0f0, 0 1px #00b0f0, 1px 0 #00b0f0, 0 -1px #00b0f0;
-  text-align: center;
-  border-radius: 10px;
-  margin-bottom: 0;
-  padding-top: 2px;
-  padding-bottom: 2px;
-}
-
-.content {
-    margin-top: 32px;
 }
 
 .padding-left {
@@ -97,6 +125,8 @@ body {
 .padding-right {
     padding-right: 5px;
 }
+
+/* BUTTONS */
 
 .btn-primary {
     background-color:  #00b0f0;
@@ -127,6 +157,8 @@ body {
     text-align: center;
 }
 
+/* FORM */
+
 .form-control {
     background-color: #F8F8F8;
     width: 100%;
@@ -137,21 +169,11 @@ body {
     margin-right: 0;
 }
 
-.lead {
-    text-shadow: none;
-    margin-bottom: 8px;
-    font-size: 1.2rem;
-}
-
-.black-background {
-    background-color: black;
-    border-radius: 10px;
-}
-
 .form-color {
     color: #fffdcc;
 }
 
+/*
 .homepage-image {
     width: 90%;
     height: auto;
@@ -161,6 +183,9 @@ body {
     margin-top: 5px;
     margin-bottom: 5px;
 }
+*/
+
+/* INDEX-PAGE */
 
 .object {
     color: #00b0f0;
@@ -172,9 +197,22 @@ body {
     margin-bottom: 8px;
 }
 
-.hide {
-    display: none;
+.yellow-underline {
+    border-bottom: 1px solid #F8F8F8;
+    padding-bottom: 5px;
 }
+
+#no-padding {
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+.content {
+    margin-top: 32px;
+}
+
+/* ABOUT PAGE */
+
 .about {
     color: #fffdcc;
     padding-top: 10px;
@@ -196,28 +234,7 @@ body {
     text-align: center;
 }
 
-.yellow-underline {
-    border-bottom: 1px solid #F8F8F8;
-    padding-bottom: 5px;
-
-}
-
-#no-padding {
-    padding-left: 3px;
-    padding-right: 3px;
-}
-
-.display-2 {
-    margin-bottom: 20px;
-}
-
-header {
-    margin-top: 1px;
-}
-
-.header-content {
-    font-size: 1.1em;
-}
+/* FOOTER */
 
 .footer {
     color:  #00b0f0;
@@ -235,7 +252,7 @@ header {
     color: #00b0f0;
 }
 
-
+/* MEDIA QUERY */
 
  @media(min-width: 1500px){
 body {
@@ -277,6 +294,6 @@ body {
     font-size: 1rem;
     }
 .mobile-align {
-    text-align: auto;
+    text-align: left;
     }
 }
