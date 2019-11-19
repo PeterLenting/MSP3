@@ -6,9 +6,9 @@ from bson.objectid import ObjectId # Convert in Bson-object to retrieve record i
 # from dotenv import load_dotenv
 # load_dotenv()
 # OR, explicitly providing path to '.env'
-from pathlib import Path
-env_path = Path('.') / '.env'
-load_dotenv(dotenv_path=env_path)
+# from pathlib import Path
+# env_path = Path('.') / '.env'
+# load_dotenv(dotenv_path=env_path)
 
 
 app = Flask(__name__)
