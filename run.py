@@ -13,7 +13,7 @@ from bson.objectid import ObjectId # Convert in Bson-object to retrieve record i
 
 app = Flask(__name__)
 app.config["MONGO_DBNAME"] = 'on_the_road'
-app.config["MONGO_URI"] = os.getenv('MONGO_URI')
+app.config["MONGO_URI"] = os.getenv('MONGO_URI', 'mongodb://localhost')
 # app.config["MONGO_DBNAME"] = os.getenv("MONGO_DBNAME")
 # app.config["MONGO_URI"] = os.getenv("MONGO_URI")
 
@@ -106,6 +106,5 @@ def update_addition(addition_id):
 
 
 if __name__ == '__main__':
-    app.run(host=os.environ.get('IP'),
-            port=int(os.environ.get('PORT')),
-            debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port, debug=True)
