@@ -13,7 +13,8 @@ from bson.objectid import ObjectId # Convert in Bson-object to retrieve record i
 
 app = Flask(__name__)
 app.config["MONGO_DBNAME"] = 'on_the_road'
-app.config["MONGO_URI"] = os.getenv('MONGO_URI', 'mongodb://localhost')
+app.config["MONGO_URI"] = 'mongodb+srv://OmeCor:OmeCor2@myfirstcluster-sykdi.mongodb.net/on_the_road?retryWrites=true&w=majority'
+
 # app.config["MONGO_DBNAME"] = os.getenv("MONGO_DBNAME")
 # app.config["MONGO_URI"] = os.getenv("MONGO_URI")
 
