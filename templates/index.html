@@ -1,21 +1,23 @@
     {% extends 'base.html' %}
+    <!--Contains header and footer-->
     {% block content %}
 
 
         {% for addition in additions %}
         <div class="content black-background">
+            <!-- DIV shows input for Date of post, Name visitor and Date of visit -->
             <div class="row header-content">
-                <div class="col-12 yellow-underline" id="no-padding">
+                <div class="col-12 yellow-underline small-padding">
                     <div class="row padding-left-mobile">
-                        <div class="col-12 col-md-4 mobile-align" id="no-padding">
+                        <div class="col-12 col-md-4 mobile-align small-padding">
                             <span class="object">Date of post: </span><br>
                             <span class="value">{{addition.current_date}}</span>
                         </div>                      
-                        <div class="col-6 col-md-4 mobile-align" id="no-padding">
+                        <div class="col-6 col-md-4 mobile-align small-padding">
                             <span class="object">Name visitor: </span><br>
                             <span class="value">{{addition.name_visitor}}</span>
                         </div>
-                        <div class="col-6 col-md-4 mobile-align" id="no-padding">
+                        <div class="col-6 col-md-4 mobile-align small-padding">
                             <span class="object">Date of visit: </span><br>
                             <span class="value">{{addition.date}}</span>
                         </div>
@@ -23,86 +25,88 @@
                 </div>
             </div>
             <div class="row main-content">
-                <div class="col-md-6" id="no-padding">
+                <!-- DIV shows input for City, Location and Experience -->
+                <div class="col-md-6 small-padding">
                     <div class="row">
-                        <div class="col-md-4" id="no-padding">
+                        <div class="col-md-4 small-padding">
                             <p class="object">City:</p>
                         </div>
-                        <div class="col-md-8" id="no-padding">
+                        <div class="col-md-8 small-padding">
                             <p class="value">{{addition.city}}</p>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-4" id="no-padding">
+                        <div class="col-md-4 small-padding">
                             <p class="object">Location:</p>
                         </div>
-                        <div class="col-md-8" id="no-padding">
+                        <div class="col-md-8 small-padding">
                             <p class="value">{{addition.location}}</p>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-4" id="no-padding">
+                        <div class="col-md-4 small-padding">
                             <p class="object">Own experience:</p>
                         </div>
-                        <div class="col-md-8" id="no-padding">
+                        <div class="col-md-8 small-padding">
                             <p class="value">{{addition.experience}}</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6" id="no-padding">
+                <!-- DIV shows input for Part of book, Chapter in book and Quote in book -->
+                <div class="col-md-6 small-padding">
                     <div class="row">
-                        <div class="col-md-4" id="no-padding">
+                        <div class="col-md-4 small-padding">
                             <p class="object">Part of book:</p>
                         </div>
-                        <div class="col-md-8" id="no-padding">
+                        <div class="col-md-8 small-padding">
                             <p class="value">{{addition.part_of_book}}</p>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-4" id="no-padding">
+                        <div class="col-md-4 small-padding">
                             <p class="object">Chapter in book:</p>
                         </div>
-                        <div class="col-md-8" id="no-padding">
+                        <div class="col-md-8 small-padding">
                             <p class="value">{{addition.chapter_in_book}}</p>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-4" id="no-padding">
+                        <div class="col-md-4 small-padding">
                             <p class="object">Quote in book:</p>
                         </div>
-                        <div class="col-md-8" id="no-padding">
+                        <div class="col-md-8 small-padding">
                             <p class="value">{{addition.quote_in_book}}</p>
                         </div>
                     </div>
                 </div>        
-                <div class="col-md-6" id="no-padding">
+                <div class="col-md-6 small-padding">
                     
                     
                 </div>
             </div>
             <div class="row main-content">
-                <div class="col-12 text-center" id="no-padding">
-                    <div class="submit-button">
-                        <a href="{{url_for('edit_addition', addition_id=addition._id)}}" class="btn btn-primary">Edit</a>
-                         
+                <!-- Edit and Delete buttons -->
+                <div class="col-12 text-center small-padding">
+                    <div class="buttons">
+                        <a href="{{url_for('edit_addition', addition_id=addition._id)}}" class="btn btn-primary">Edit</a> 
                         <button type="button" id="{{ addition._id }}" class="btn btn-primary current-post" data-toggle="modal" data-target="#deleteModal">Delete</button>
-                            <!-- Modal -->
-                        <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                    </div>
-                                    <div class="modal-body">
-                                    Are you sure you want to delete this post?
-                                    </div>
-                                    <div class="modal-footer">
-                                        <a href="" id="confirm-delete" class="btn btn-primary black-border">Yes</a>
-                                        <button type="button" class="btn btn-primary black-border" data-dismiss="modal">No</button>
+                            <!-- Modal that shows after clicking Delete-button -->
+                            <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                        </div>
+                                        <div class="modal-body">
+                                        Are you sure you want to delete this post?
+                                        </div>
+                                        <div class="modal-footer">
+                                            <a href="" id="confirm-delete" class="btn btn-primary black-border">Yes</a>
+                                            <button type="button" class="btn btn-primary black-border" data-dismiss="modal">No</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
                     </div>
                 </div>
             </div>

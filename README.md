@@ -92,16 +92,21 @@ It would be nice if users where able to let other users know whether they like t
 The links in the footer to the social media accounts of Chasing Jack Kerouac are empty for know, since there are no accounts. These accounts could really add to the interaction of the community of Kerouac-fans and helps them share their post.
 
 ## Technologies used
-•	HTML, CSS
+•	HTML, CSS, JavaScript, Python
 
-•	IDE: Gitpod
+•	IDE: [Gitpod](https://gitpod.io/).
+
+•   Flask to construct and render pages.
+
+•   Jinja2 to simplify displaying data from the backend.
+
+•   [Tempus Dominus](https://tempusdominus.github.io/bootstrap-4/) and [JQuery](https://jquery.com/) for the date / time picker.
 
 •	[Bootstrap](https://getbootstrap.com/) for the grid system of the page.
 
 •	[Google Fonts](https://fonts.google.com/) for the fonts.
 
 •	[Font Awesome](https://fontawesome.com/) for the icons in the footer of the website.
-
 
 •	Paint to edit the images used.
 
@@ -110,6 +115,10 @@ The links in the footer to the social media accounts of Chasing Jack Kerouac are
 •	Bash / Ubuntu to commit my project and to push it to Github.
 
 •	[Github](https://github.com/) for version control and for users to view the deployed version of the website.
+
+•   [MongoDB](https://www.mongodb.com/) as the database
+
+•   [Heroku](https://www.heroku.com/) to deploy the project
 
 ## Testing
 
@@ -131,7 +140,7 @@ I created, read, updated and deleted posts myself and had other people testing i
 •   When using the update-function, the Current date wasn't updated the right way. Adding "current_date = (request.form.get('current_date'))" fixed that problem. 
 
 ### Browsers
-The game was tested in Chrome, Internet Explorer and Firefox.
+The page was tested in Chrome, Internet Explorer and Firefox.
 
 ### Automated Testing
 The following **validation services** were used to check the validity of the code:
@@ -143,16 +152,10 @@ The following **validation services** were used to check the validity of the cod
 •	JSHint was used to validate JavaScript.
 
 ## Deployment
-The project was built using Cloud9 and Visual Studio Code. I committed the project and pushed it up to Github using Bash.
-During the development of the game, there were some issues with AWS / Cloud9. As one of the consequences it was required to push minor updates to github to make them visible for the Code Institute Tutors. This of course is not realistic for a project in real live, but does mean that some of the commits in the repository are only done for the tutors and would not have been done if this was a 'real' project.
+The project was built using Gitpod. I committed the project and pushed it up to Github. Then I made a connection between Github and Heroku to deploy the project.
 
 ### How to view the deployed version of this project
-Log in to Github
-1. Select PeterLenting/game from the list of repositories.
-2. Select Settings from the navbar near the top of the page.
-3. Scroll down to where it says 'Github Pages', go to the subtitle labelled 'Source', click it and  change the source to 'master branch'.
-4. The page is then automatically refreshed and ready for deployment. It can take up to 10 minutes for it to be viewable.
-5. Scroll back down to the GitHub Pages section to retrieve the link to the deployed website.
+
 
 ### How to run this project locally
 To clone this project from GitHub:

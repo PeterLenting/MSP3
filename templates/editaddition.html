@@ -1,27 +1,33 @@
     {% extends 'base.html' %}
+    <!--Contains header and footer-->
     {% block content %}
 
  <div class="black-background form-color content">
+ <!-- Form to fill in, output shows on index.html -->
         <form action="{{url_for('update_addition', addition_id=additions._id)}}" method="POST">
             <div class="form-row">
-            <div class="form-group col-md-2">
+                <!-- Current date (read only) -->
+                <div class="form-group col-md-6 col-lg-2">
                     <label for="inputDate">Current Date</label>
                     <div class="input-group date" id="datetimepicker5" data-target-input="nearest">
-                        <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker5" id="current_date" name="current_date" readonly value="{{additions.current_date}}"/>
+                        <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker5" id="current_date" name="current_date" value="{{additions.current_date}}" readonly/>
                     </div>
                 </div>
-                <div class="form-group col-md-4">
+                <!-- Edit City -->
+                <div class="form-group col-md-6 col-lg-4">
                     <label for="inputCity">City</label>
-                    <input type="text" id="city" name="city" class="form-control" placeholder="What city are we talking about?" required value="{{additions.city}}">
+                    <input type="text" id="city" name="city" class="form-control" placeholder="What city are we talking about?" value="{{additions.city}}" required>
                 </div>
-                <div class="form-group col-md-4">
+                <!-- Edit Location -->
+                <div class="form-group col-md-6 col-lg-4">
                     <label for="inputCity">Location</label>
-                    <input type="text" id="location" name="location" class="form-control" placeholder="What specific place are we talking about?" required value="{{additions.location}}">
+                    <input type="text" id="location" name="location" class="form-control" placeholder="What specific place are we talking about?" value="{{additions.location}}" required>
                 </div>
-                <div class="form-group col-md-2">
+                <!-- Edit Date of experience -->
+                <div class="form-group col-md-6 col-lg-2">
                     <label for="inputDate">Date of experience</label>
                     <div class="input-group date" id="datetimepicker4" data-target-input="nearest">
-                        <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker4" id="date" name="date" required value="{{additions.date}}"/>
+                        <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker4" id="date" name="date" value="{{additions.date}}" required/>
                         <div class="input-group-append" data-target="#datetimepicker4" data-toggle="datetimepicker">
                             <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                         </div>
@@ -29,7 +35,13 @@
                 </div>
             </div>
             <div class="form-row">
-                <div class="form-group col-md-6">
+                <!-- Edit My nam -->
+                <div class="form-group col-md-4">
+                    <label for="inputName">My name</label>
+                    <input type="text" class="form-control" id="name_visitor" name="name_visitor" placeholder="What's your name?" value="{{additions.name_visitor}}" required>
+                </div>
+                <!-- Edit Part of the book -->
+                <div class="form-group col-md-4">
                     <label for="inputPart">Part of the book</label>
                     <select id="part_of_book" name="part_of_book" class="form-control" required>
                         <option value="" disabled selected>Choose...</option>
@@ -42,7 +54,8 @@
                         {% endfor %}
                     </select>
                 </div>
-                <div class="form-group col-md-6">
+                <!-- Edit Chapter of the book -->
+                <div class="form-group col-md-4">
                     <label for="inputChapter">Chapter of the book</label>
                     <select id="chapter_in_book" name="chapter_in_book" class="form-control" required>
                         <option value="" disabled selected>Choose...</option>
@@ -57,19 +70,15 @@
                 </div>
             </div>
             <div class="form-row">
-                <div class="form-group col-md-12">
+                <!-- Edit Quote in book -->
+                <div class="form-group col-md-6">
                     <label for="inputQuote">Quote in book</label>
-                    <input type="text" class="form-control" id="quote_in_book" name="quote_in_book" placeholder="What does Jack Kerouac write about this place?" required value="{{additions.quote_in_book}}"">
+                    <textarea id="quote_in_book" name="quote_in_book" class="form-control" placeholder="What does Jack Kerouac write about this place?" required>{{additions.quote_in_book}}</textarea>
                 </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-md-3">
-                    <label for="inputName">My name</label>
-                    <input type="text" class="form-control" id="name_visitor" name="name_visitor" placeholder="What's your name?" required value="{{additions.name_visitor}}">
-                </div>
-                <div class="form-group col-md-9">
+                <!-- Edit My Experience -->                
+                <div class="form-group col-md-6">
                     <label for="inputExperience">My experience</label>
-                    <input type="text" class="form-control" id="experience" name="experience" placeholder="Tell us about your own experience" required value="{{additions.experience}}">
+                    <textarea id="experience" name="experience" class="form-control" placeholder="Tell us about your own experience" required>{{additions.experience}}</textarea>
                 </div>
             </div>
             <div class="submit-button" id="center2">

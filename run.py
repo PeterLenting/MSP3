@@ -1,15 +1,27 @@
 import os
 from flask import Flask, render_template, redirect, request, url_for
-from flask_pymongo import PyMongo
-from bson.objectid import ObjectId
+from flask_pymongo import PyMongo # To connect Flask to the MongoDB
+from bson.objectid import ObjectId # Convert in Bson-object to retrieve record in MongoDB by report ID
+# settings.py
+from dotenv import load_dotenv
+load_dotenv()
+# OR, explicitly providing path to '.env'
+from pathlib import Path 
+env_path = Path('.') / '.env'
+load_dotenv(dotenv_path=env_path)
+
 
 app = Flask(__name__)
-app.config["MONGO_DBNAME"] = 'on_the_road'
-app.config["MONGO_URI"] = 'mongodb+srv://OmeCor:OmeCor@myfirstcluster-sykdi.mongodb.net/on_the_road?retryWrites=true&w=majority'
+app.config["MONGO_DBNAME"] = os.getenv("MONGO_DBNAME")
+app.config["MONGO_URI"] = os.getenv("MONGO_URI")
 
+# Create an instance of PyMongo. Add the app into it with a constructor method.
 mongo = PyMongo(app)
 
-
+"""
+- Make connection to the database
+- render a template
+"""
 @app.route('/')
 @app.route('/get_index')
 def get_index():
@@ -24,6 +36,7 @@ def about():
 @app.route('/delete_addition/<addition_id>')
 def delete_addition(addition_id):
     additions = mongo.db.additions
+    # connecting with the correct addition in the database
     additions.remove({'_id': ObjectId(addition_id)})
     return redirect(url_for('get_index'))
 
@@ -62,6 +75,7 @@ def insert_addition():
 
 @app.route('/edit_addition/<addition_id>')
 def edit_addition(addition_id):
+    # connecting with the correct addition in the database
     addition = mongo.db.additions.find_one({'_id': ObjectId(addition_id)})
     categories = mongo.db.categories.find()
     chapters = mongo.db.chapters.find()

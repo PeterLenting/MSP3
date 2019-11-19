@@ -1,23 +1,29 @@
     {% extends 'base.html' %}
+    <!--Contains header and footer-->
     {% block content %}
 
     <div class="black-background form-color content">
+    <!-- Form to fill in, output shows on index.html -->
         <form action="{{url_for('insert_addition')}}" method="POST">
             <div class="form-row">
+                <!-- Current date (read only) -->
                 <div class="form-group col-md-6 col-lg-2">
                     <label for="inputDate">Current Date</label>
                     <div class="input-group date" id="datetimepicker5" data-target-input="nearest">
                         <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker5" id="current_date" name="current_date" readonly/>
                     </div>
                 </div>
+                <!-- Set City -->
                 <div class="form-group col-md-6 col-lg-4">
                     <label for="inputCity">City</label>
                     <input type="text" id="city" name="city" class="form-control" placeholder="What city are we talking about?" required>
                 </div>
+                <!-- Set Location -->
                 <div class="form-group col-md-6 col-lg-4">
                     <label for="inputLocation">Location</label>
                     <input type="text" id="location" name="location" class="form-control" placeholder="What specific place are we talking about?" required>
                 </div>
+                <!-- Set Date of experience -->
                 <div class="form-group col-md-6 col-lg-2">
                     <label for="inputDate">Date of experience</label>
                     <div class="input-group date" id="datetimepicker4" data-target-input="nearest">
@@ -29,10 +35,12 @@
                 </div>
             </div>
             <div class="form-row">
+                <!-- Set Name of visitor -->
                  <div class="form-group col-md-4">
                     <label for="inputName">My name</label>
                     <input type="text" class="form-control" id="name_visitor" name="name_visitor" placeholder="What's your name?" required>
                 </div>
+                <!-- Set Part of the book -->
                 <div class="form-group col-md-4">
                     <label for="inputPart">Part of the book</label>
                     <select id="part_of_book" name="part_of_book" class="form-control" type="int" required>
@@ -42,6 +50,7 @@
                         {% endfor %}
                     </select>
                 </div>
+                <!-- Set Chapter of the book -->
                 <div class="form-group col-md-4">
                     <label for="inputChapter">Chapter of the book</label>
                     <select id="chapter_in_book" name="chapter_in_book" class="form-control" required>
@@ -53,13 +62,15 @@
                 </div>
             </div>
             <div class="form-row">
+                <!-- Set Quote in book -->
                 <div class="form-group col-md-6">
                     <label for="inputQuote">Quote in book</label>
-                    <textarea type="text" class="form-control" id="quote_in_book" name="quote_in_book" placeholder="What does Jack Kerouac write about this place?" required></textarea>
+                    <textarea class="form-control" id="quote_in_book" name="quote_in_book" placeholder="What does Jack Kerouac write about this place?" required></textarea>
                 </div>
+                <!-- Set My experience -->
                 <div class="form-group col-md-6">
                     <label for="inputExperience">My experience</label>
-                    <textarea type="textarea" class="form-control" id="experience" name="experience" placeholder="Tell us about your own experience" required></textarea>
+                    <textarea class="form-control" id="experience" name="experience" placeholder="Tell us about your own experience" required></textarea>
                 </div>
             </div>
             <div class="submit-button" id="center2">

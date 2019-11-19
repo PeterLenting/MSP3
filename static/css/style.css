@@ -202,9 +202,9 @@ header {
     padding-bottom: 5px;
 }
 
-#no-padding {
-    padding-left: 3px;
-    padding-right: 3px;
+.small-padding {
+    padding-left: 3px!important;
+    padding-right: 3px!important;
 }
 
 .content {

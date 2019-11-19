@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    /* set the date */
+    /* Allows the user to set the date of the visit */
     $(function () {
         $('#datetimepicker4').datetimepicker({
             format: 'DD/MM/YYYY',
@@ -7,6 +7,7 @@ $(document).ready(function () {
         });
     });
 
+    /* Sets and shows current date */
     $(function () {
         $('#datetimepicker5').datetimepicker({
             date: moment(),
@@ -14,7 +15,8 @@ $(document).ready(function () {
         });
     });
 
-
+    /* ".current-post" is the "Yes"-button in the modal that shows when the "Delete"-button is clicked on index.html
+    When "Yes" is clicked, the correct post (with the corresponding ID is being deleted. */
     $(".current-post").on("click", function () {
         let addition_id = $(this).attr("id");
         let currentPath = window.location.pathname;
