@@ -3,8 +3,8 @@ from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo # To connect Flask to the MongoDB
 from bson.objectid import ObjectId # Convert in Bson-object to retrieve record in MongoDB by report ID
 # settings.py
-# from dotenv import load_dotenv
-# load_dotenv()
+from dotenv import load_dotenv
+load_dotenv()
 # OR, explicitly providing path to '.env'
 # from pathlib import Path
 # env_path = Path('.') / '.env'
@@ -12,11 +12,11 @@ from bson.objectid import ObjectId # Convert in Bson-object to retrieve record i
 
 
 app = Flask(__name__)
-app.config["MONGO_DBNAME"] = 'on_the_road'
-app.config["MONGO_URI"] = 'mongodb+srv://OmeCor:OmeCor2@myfirstcluster-sykdi.mongodb.net/on_the_road?retryWrites=true&w=majority'
+# app.config["MONGO_DBNAME"] = 'on_the_road'
+# app.config["MONGO_URI"] = 'mongodb+srv://OmeCor:OmeCor2@myfirstcluster-sykdi.mongodb.net/on_the_road?retryWrites=true&w=majority'
 
-# app.config["MONGO_DBNAME"] = os.getenv("MONGO_DBNAME")
-# app.config["MONGO_URI"] = os.getenv("MONGO_URI")
+app.config["MONGO_DBNAME"] = os.getenv("MONGO_DBNAME")
+app.config["MONGO_URI"] = os.getenv("MONGO_URI")
 
 # Create an instance of PyMongo. Add the app into it with a constructor method.
 mongo = PyMongo(app)
@@ -26,7 +26,7 @@ mongo = PyMongo(app)
 - render a template
 """
 @app.route('/')
-@app.route('/get_index')
+@app.route('/index')
 def get_index():
     return render_template("index.html", additions=mongo.db.additions.find().sort('current_date', -1))
 
