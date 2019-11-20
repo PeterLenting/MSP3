@@ -65,7 +65,7 @@ def insert_addition():
             'experience': request.form.get('experience'),
         }
     )
-    return redirect("get_index")
+    return redirect("/index")
 
 
 @app.route('/edit_addition/<addition_id>')

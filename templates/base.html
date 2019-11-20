@@ -47,16 +47,18 @@
                     </ul>
                 </div>
             </nav>
-            <div class="jumbotron jumbotron-fluid">
-                <div class="container-fluid">
-                    <h1 class="display-2">Chasing Jack Kerouac</h1>
-                    <p class="lead">Some 70 years ago Jack Kerouac travelled America
-                                    and wrote a book that inspired millions: On the Road.<br>
-                                    What do the places Sal Paradise and Dean Moriarty roamed look like now?<br>
-                                    Check it out right here and add your own experience!
-                    </p>
+            <a href="{{ (url_for('get_index')) }}">
+                <div class="jumbotron jumbotron-fluid">
+                    <div class="container-fluid">
+                        <h1 class="display-2">Chasing Jack Kerouac</h1>
+                        <p class="lead">Some 70 years ago Jack Kerouac travelled America
+                                        and wrote a book that inspired millions: On the Road.<br>
+                                        What do the places Sal Paradise and Dean Moriarty roamed look like now?<br>
+                                        Check it out right here and add your own experience!
+                        </p>
+                    </div>
                 </div>
-            </div>
+            </a>
         </header>
         
         {% block content %}
