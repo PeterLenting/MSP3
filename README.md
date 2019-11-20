@@ -3,9 +3,9 @@
 ## Introduction
 This site is a simple, informative and fun page, build to let fans of Jack Kerouac’s novel On the Road inform each other about places from the book that can still be visited now.  Fans can add new locations, delete their posts, adjust them and of course read posts from other fans.
 
-![Responsive game](https://raw.githubusercontent.com/PeterLenting/MSP3/master/static/images/mock-ups/responsive-test.jpg)
+![Responsive site](https://raw.githubusercontent.com/PeterLenting/MSP3/master/static/images/mock-ups/responsive-test.jpg)
 
-- [View the game here](https://peterlenting.github.io/second-milestone-project/index.html)
+- [View the page here](https://chasing-jack-kerouac.herokuapp.com/index)
 - [View the Github Repository here](https://github.com/PeterLenting/MSP3)
 
 ## Contents table
@@ -14,7 +14,8 @@ This site is a simple, informative and fun page, build to let fans of Jack Kerou
    - [Who is the target audience](https://github.com/PeterLenting/MSP3#who-is-the-target-audience)
    - [Mock-ups](https://github.com/PeterLenting/MSP3#mock-ups)
    - [User stories](https://github.com/PeterLenting/MSP3#user-stories)
-2. [Features]()
+   - [Design](https://github.com/PeterLenting/MSP3#design)
+2. [Features](https://github.com/PeterLenting/MSP3#features)
    - [Existing features](https://github.com/PeterLenting/MSP3#existing-features)
    - [Features left to implement](https://github.com/PeterLenting/MSP3#features-left-to-implement)
 3. [Technologies used](https://github.com/PeterLenting/MSP3#technologies-used)
@@ -47,8 +48,6 @@ Anybody who likes Jack Kerouac's novel On the Road. It could be people who want 
 [Mock-up of the mobile version of the game](https://raw.githubusercontent.com/PeterLenting/MSP3/master/static/images/mock-ups/mobile-mock-up.jpg).
 [Mock-up of the desktop version of the game](https://raw.githubusercontent.com/PeterLenting/second-milestone-project/master/images/mock-ups/desktop-mock-up-name-and-flag.jpg)
 
-As you can see there are some small diferences between the mock-up and actual game. On desktop I moved the aside to the right of the game, because it makes more sence to keep the actual game on the prominent left side. Besides that small changes are made to the lay-out. The yellow colour is chosen because yellow is the most iconic colour in cycling. It is the colour of the leadersjersey in the Tour de France. The darkblue and the orange contrast nicely and give the game a cheerfull look.
-
 ### User stories
 As a visitor, I want:
 1.	To read about the places Jack Kerouac wrote about in On the Road in order to find information about the way the places look now.
@@ -57,10 +56,15 @@ As a visitor, I want:
 4.	To write about my own experience in order to inform other people.
 5. 	To enjoy myself.
 
+### Design
+•	The website is easy to navigate and nice to see. The buttons are all clearly visible and the website works intuitive. 
+•	The color scheme is based on the color scheme that was used for a 2006 Dutch edition of On the Road (see About-page for image). The black, yellow and blue combination gives the book and the website a classy look.
+•	The Lato-font is easy on the eye and has a nice, clean look.
+
 ## Features
 
 ### Existing features
-**Home** – The home-page of the site. It shows the posts people have made. Under each post is a button which gives the option to edit and delete the post.
+**Home** – The home-page of the site. It shows the posts people have made. Under each post are two buttons. One which gives the option to edit and one to delete the post.
 
 **About**  – The About-page tells the story of the site. Why did I make it and what is the purpose.
 
@@ -70,9 +74,27 @@ As a visitor, I want:
 
 **Delete** – This buttons allows anyone to delete any post. When clicked a modal pops up that ask the user if he/she is sure. 'Yes' deletes the post, 'No' sends him/her back to the homepage.
 
-**Submit** – Allows the user to send in his form.
+**Submit** – Allows the user to send in the form.
 
 **Footer** - The footer shows links to the social media accounts of Chasing Jack Kerouac. The links are empty now, since there are no social-accounts yet.
+
+**Current Date** - Sets the date of the post. Read only and will update when the post is edited.
+
+**City** - The City the experience the user had took place in.
+
+**Location** - The specific location the experience the user had took place in.
+
+**Date of experience** - The date on which the user had his experience.
+
+**My name** - The name of the user.
+
+**Part of the book** - The part of On the Road in which Jack Kerouac writes about the location (1-4).
+
+**Chapter of the book** - The chapter of On the Road in which Jack Kerouac writes about the location (1-14).
+
+**Quote in Book** - A quote from On the Road in which Jack Kerouac tells about the location.
+
+**My experience** - A description of the experience the user had on the specific location.
 
 ### Features left to implement
 
@@ -127,8 +149,37 @@ The responsiveness of the page was tested at all times during the development of
 
 ### Manual testing
 
-I created, read, updated and deleted posts myself and had other people testing it as well during the development. This is a reliable way of discovering whether everything works as it should.
+I created, read, updated and deleted posts myself and had other people testing it as well during the development. This is a reliable way of discovering whether everything works as it should:
 
+**Home** - When clicked should bring user to index.html. Works.
+
+**About** - When clicked should open addaddition.html. Works.
+
+**Add a post** - When clicked should bring user to index.html. Works.
+
+**Jumbotron** - When clicked should bring user to index.html. Works.
+
+**Edit-button** - When clicked should open editaddition.html. Works.
+
+**Editaddition.html** - The fields in the form should contain the content from the corresponding post. Works.
+
+**Delete-button** - When clicked should open modal. Works.
+
+**Yes-button** - When clicked should delete corresponding post. Works.
+
+**No-button** - When clicked should return user to index.html. Works.
+
+**Submit-button (addaddition)** - When clicked the content from the fields in the form should be sent to MongoDB and index.html. Works.
+
+**Submit-button (editaddition)** - When clicked the content from the fields in the form should overwrite the previous content in MongoDB and index.html. Works.
+
+**Current date in form** - Should show current date and user should not be able to change it. Works.
+
+**Date of experience in form** - Should show current date and user should be able to change date to date in the past only. Works.
+
+**Part of the book in form** - Dropdown should contain nummers 1 to 4. Works.
+
+**Chapter in the book in form** - Dropdown should contain nummers 1 to 14. Works.
 
 ### Improvements after testing
 •   Clicking the delete-button just deleted the post. At first I thought I would create and pop-up to say 'Your post has been deleted', but then I decided it would be better to make sure the user wanted to delete the post.  
@@ -137,7 +188,6 @@ I created, read, updated and deleted posts myself and had other people testing i
 
 •   At first de Date of visit determined the order of the posts on the homepage. It makes more sense to put the new posts on top, so now Current date determines the order.
 
-•   When using the update-function, the Current date wasn't updated the right way. Adding "current_date = (request.form.get('current_date'))" fixed that problem. 
 
 ### Browsers
 The page was tested in Chrome, Internet Explorer and Firefox.
@@ -157,16 +207,8 @@ The project was built using Gitpod. I committed the project and pushed it up to 
 ### How to view the deployed version of this project
 
 
-### How to run this project locally
-To clone this project from GitHub:
-1.	Follow this link to the [Game Repository](https://github.com/PeterLenting/second-milestone-project)
-2.	Under the repository name, click 'Clone or download'.
-3.	In the Clone with HTTPs section, copy the clone URL for the repository.
-4.	In your local IDE open Git Bash.
-5.	Change the current working directory to the location where you want the cloned directory to be made.
-6.	Type git clone, and then paste the URL you copied in Step 3.
-git clone https://github.com/USERNAME/REPOSITORY
-7.	Press Enter. Your local clone will be created.
+### How to add this project to your local workspace
+
 
 ## Credits
 
@@ -174,13 +216,13 @@ git clone https://github.com/USERNAME/REPOSITORY
 All the content on the website was written by me.
 
 ### Media
-The images I used are
+The image from the book-cover used on the about-page is a picture of the book I took myself. The image in the header is an image I found on multiple pages and I have not been able to find the person who took it.  
 
 ### Code
 I wrote all the code myself, with help and inspiration from StackOverflow.com. Questions and answers on that side pointed me in the right direction more than once. The Code Institute tutor-team also helped me understand why sometimes some code wasn't working.
 
 ### Acknowledgements
-I would like to thank fellow student Rik Duijm for discussing ideas.
+I would like to thank fellow student Rik Duijm for discussing ideas and the tutors from Code Institute for pointing me in the right direction.
 
 ## Disclaimer
 The content of this website is for educational purposes only.

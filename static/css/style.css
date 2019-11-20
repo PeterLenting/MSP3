@@ -96,6 +96,7 @@ header {
 
 .display-2 {
     margin-bottom: 20px;
+    font-size: 5.2rem;
 }
 
 .lead {
@@ -292,6 +293,7 @@ body {
     }
 .display-2 {
     margin-bottom: 40px;
+    font-size: 5.5rem;
     }
 .jumbotron {
     padding-top: 32px;
