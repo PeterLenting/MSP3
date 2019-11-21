@@ -219,22 +219,13 @@ The project was built using Gitpod. I committed the project and pushed it up to 
 
 [View the page here](https://chasing-jack-kerouac.herokuapp.com/index)
 
-•	Connection with MongoDB Atlas
+**Connection with MongoDB Atlas** - For the project a MongoDB Atlas database was used to store the date. To connect Flask to the MongoDB the third party library flaks-pymongo was installed.
 
-For the project a MongoDB Atlas database was used to store the date. To connect Flask to the MongoDB the third party library flaks-pymongo was installed.
+**Connection string and secret key** - In the app.py the os class getenv method is used to point Heroku to the config variable (MONGO_URI) in order to keep "MONGO_DBNAME" and "MONGO_URI" secret.
 
-•	Connection string and secret key
+**Requirements and Procfile** - A requirements.txt file is used to specify the dependencies required for the application. A Procfile is used to specify to Heroku the commands that are executed by the app on startup.
 
-In the app.py the os class getenv method is used to point Heroku to the config variable (MONGO_URI) in order to keep "MONGO_DBNAME" and "MONGO_URI" secret.
-
-•	Requirements and Procfile
-
-A requirements.txt file is used to specify the dependencies required for the application. A Procfile is used to specify to Heroku the commands that are executed by the app on startup.
-
-•	Connection between Github and Heroku
-
-On Heroku Dashboard the “Deploy” tab was chosen and the "GitHub" pane selected. Then the option to auto-deploy the project whenever it’s pushed to on Github was activated, the IP, PORT and my connection string in Heroku settings specified and finally, when scrolled down to "Manual deploy" "Master" branch was deployed.
-
+**Connection between Github and Heroku** - On Heroku Dashboard the “Deploy” tab was chosen and the "GitHub" pane selected. Then the option to auto-deploy the project whenever it’s pushed to on Github was activated, the IP, PORT and my connection string in Heroku settings specified and finally, when scrolled down to "Manual deploy" "Master" branch was deployed.
 
 ### How to add this project to your local workspace
 
