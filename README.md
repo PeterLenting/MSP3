@@ -26,7 +26,6 @@ This site is a simple, informative and fun page, build to let fans of Jack Kerou
    - [Browsers](https://github.com/PeterLenting/MSP3#browsers)
    - [Automated testing](https://github.com/PeterLenting/MSP3#automated-testing)
 5. [Deployment](https://github.com/PeterLenting/MSP3#deployment)
-   - [How to view the deployed version of this project](https://github.com/PeterLenting/MSP3#how-to-view-the-deployed-version-of-this-project)
    - [How to run this project locally](https://github.com/PeterLenting/MSP3#how-to-run-this-project-locally)
 6. [Credits](https://github.com/PeterLenting/MSP3#credits)
    - [Content](https://github.com/PeterLenting/MSP3#content)
@@ -209,11 +208,32 @@ The following **validation services** were used to check the validity of the cod
 ## Deployment
 The project was built using Gitpod. I committed the project and pushed it up to Github. Then I made a connection between Github and Heroku to deploy the project.
 
-### How to view the deployed version of this project
+[View the page here](https://chasing-jack-kerouac.herokuapp.com/index)
+
+•	Connection with MongoDB Atlas
+For the project a MongoDB Atlas database was used to store the date. To connect Flask to the MongoDB the third party library flaks-pymongo was installed.
+
+•	Connection string and secret key
+In the app.py the os class getenv method is used to point Heroku to the config variable (MONGO_URI) in order to keep "MONGO_DBNAME" and "MONGO_URI" secret.
+
+Requirements and Procfile
+•	A requirements.txt file is used to specify the dependencies required for the application. A Procfile is used to specify to Heroku the commands that are executed by the app on startup.
+
+•	Connection between Github and Heroku
+On Heroku Dashboard the “Deploy” tab was chosen and the "GitHub" pane selected. Then the option to auto-deploy the project whenever it’s pushed to on Github was activated, the IP, PORT and my connection string in Heroku settings specified and finally, when scrolled down to "Manual deploy" "Master" branch was deployed.
 
 
 ### How to add this project to your local workspace
 
+## To clone this project from GitHub:
+
+•	Go to [the project's repository](https://github.com/PeterLenting/MSP3).
+•	Under the repository name, click "Clone or download".
+•	In the "Clone with HTTPs" section, copy the URL.
+•	In your IDE open Git Bash.
+•	Change your current working directory to the location you want the cloned directory to be made in.
+•	Type ```git clone```, and paste the URL you copied before.
+•	Hit Enter. The process of cloning will now be completed.
 
 ## Credits
 
@@ -221,13 +241,14 @@ The project was built using Gitpod. I committed the project and pushed it up to 
 All the content on the website was written by me.
 
 ### Media
-The image from the book-cover used on the about-page is a picture of the book I took myself. The image in the header is an image I found on multiple pages and I have not been able to find the person who took it.  
+The image from the book-cover used on the about-page and as the favicon is a picture of the book (2006 Dutch edition, Ulysses) I took myself. The image in the header is an image I found on multiple pages and I have not been able to find the person who took it.  
 
 ### Code
-I wrote all the code myself, with help and inspiration from StackOverflow.com. Questions and answers on that side pointed me in the right direction more than once. The Code Institute tutor-team also helped me understand why sometimes some code wasn't working.
+I wrote all the code myself, with help and inspiration from StackOverflow.com. Questions and answers on that site pointed me in the right direction more than once. The Code Institute tutor-team also helped me understand why sometimes some code wasn't working.
+From Bootstrap I used, besides the obvious, [datetimepicker](https://tempusdominus.github.io/bootstrap-4/).
 
 ### Acknowledgements
-I would like to thank fellow student Rik Duijm for discussing ideas and the tutors from Code Institute for pointing me in the right direction.
+I would like to thank fellow student Rik Duijm for discussing ideas, the tutors from Code Institute for pointing me in the right direction, and mentor Seun Owonikoko for her support.
 
 ## Disclaimer
 The content of this website is for educational purposes only.
