@@ -26,7 +26,7 @@ This site is a simple, informative and fun page, build to let fans of Jack Kerou
    - [Browsers](https://github.com/PeterLenting/MSP3#browsers)
    - [Automated testing](https://github.com/PeterLenting/MSP3#automated-testing)
 5. [Deployment](https://github.com/PeterLenting/MSP3#deployment)
-   - [How to run this project locally](https://github.com/PeterLenting/MSP3#how-to-run-this-project-locally)
+   - [How to add this project to your local workspace](https://github.com/PeterLenting/MSP3#How-to-add-this-project-to-your-local-workspace)
 6. [Credits](https://github.com/PeterLenting/MSP3#credits)
    - [Content](https://github.com/PeterLenting/MSP3#content)
    - [Media](https://github.com/PeterLenting/MSP3#media)
@@ -62,7 +62,11 @@ As a visitor, I want:
 
 ### Design
 •	The website is easy to navigate and nice to see. The buttons are all clearly visible and the website works intuitive. 
+
+•	The home-page should show the content of the posts the users made, because that is what the site is all about.
+
 •	The color scheme is based on the color scheme that was used for a 2006 Dutch edition of On the Road (see About-page for image). The black, yellow and blue combination gives the book and the website a classy look.
+
 •	The Lato-font is easy on the eye and has a nice, clean look.
 
 ## Features
