@@ -76,16 +76,10 @@ header {
     margin-top: 1px;
 }
 
-/*
-.header-content {
-    font-size: 1.1em;
-}
-*/
-
 .jumbotron {
   background-image: url("/static/images/denver-sf-mobile2.jpg");
   background-size: 100% 100%;
-  color: White;
+  color: white;
   text-shadow: -1px 0 #00b0f0, 0 1px #00b0f0, 1px 0 #00b0f0, 0 -1px #00b0f0;
   text-align: center;
   border-radius: 10px;
@@ -100,7 +94,8 @@ header {
 }
 
 .lead {
-    text-shadow: none;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    color: white;
     margin-bottom: 8px;
     font-size: 1.2rem;
 }
@@ -189,18 +184,6 @@ header {
 .form-color {
     color: #fffdcc;
 }
-
-/*
-.homepage-image {
-    width: 90%;
-    height: auto;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-*/
 
 /* INDEX-PAGE */
 

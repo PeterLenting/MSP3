@@ -225,14 +225,20 @@ On Heroku Dashboard the “Deploy” tab was chosen and the "GitHub" pane select
 
 ### How to add this project to your local workspace
 
-## To clone this project from GitHub:
+**To clone this project from GitHub:**
 
 •	Go to [the project's repository](https://github.com/PeterLenting/MSP3).
+
 •	Under the repository name, click "Clone or download".
+
 •	In the "Clone with HTTPs" section, copy the URL.
+
 •	In your IDE open Git Bash.
+
 •	Change your current working directory to the location you want the cloned directory to be made in.
+
 •	Type ```git clone```, and paste the URL you copied before.
+
 •	Hit Enter. The process of cloning will now be completed.
 
 ## Credits

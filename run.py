@@ -1,7 +1,7 @@
 import os
 from flask import Flask, render_template, redirect, request, url_for
-from flask_pymongo import PyMongo # To connect Flask to the MongoDB
-from bson.objectid import ObjectId # Convert in Bson-object to retrieve record in MongoDB by report ID
+from flask_pymongo import PyMongo  # To connect Flask to the MongoDB
+from bson.objectid import ObjectId  # Convert in Bson-object to retrieve addition in MongoDB by addition ID
 
 
 app = Flask(__name__)
@@ -20,7 +20,8 @@ mongo = PyMongo(app)
 @app.route('/')
 @app.route('/index')
 def get_index():
-    return render_template("index.html", additions=mongo.db.additions.find().sort('current_date', -1))
+    return render_template("index.html", additions=mongo.db.additions.find()
+                           .sort('current_date', -1))
 
 
 @app.route('/about')
@@ -40,7 +41,8 @@ def delete_addition(addition_id):
 def add_addition():
     categories = mongo.db.categories.find().sort('category_part', 1)
     chapters = mongo.db.chapters.find().sort('chapter', 1)
-    return render_template('addaddition.html',  categories=categories, chapters=chapters)
+    return render_template('addaddition.html', categories=categories,
+                           chapters=chapters)
 
 
 @app.route('/insert_addition', methods=['POST'])
@@ -74,7 +76,8 @@ def edit_addition(addition_id):
     addition = mongo.db.additions.find_one({'_id': ObjectId(addition_id)})
     categories = mongo.db.categories.find()
     chapters = mongo.db.chapters.find()
-    return render_template("editaddition.html", additions=addition, categories=categories, chapters=chapters)
+    return render_template("editaddition.html", additions=addition,
+                           categories=categories, chapters=chapters)
 
 
 @app.route('/update_addition/<addition_id>', methods=['POST'])
@@ -83,7 +86,7 @@ def update_addition(addition_id):
     value = int(request.form.get('chapter_in_book'))
     value2 = int(request.form.get('part_of_book'))
     addition.update({'_id': ObjectId(addition_id)},
-            {
+                    {
             'city': request.form.get('city'),
             'chapter_in_book': value,
             'location': request.form.get('location'),
