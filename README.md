@@ -45,8 +45,13 @@ The site is really simple in use: anyone can add a new destination and tell abou
 Anybody who likes Jack Kerouac's novel On the Road. It could be people who want to visit some location from the book, or have already done so. But also people who are just curieus what the places look like these days.
 
 ### Mock-ups
-[Mock-up of the mobile version of the game](https://raw.githubusercontent.com/PeterLenting/MSP3/master/static/images/mock-ups/mobile-mock-up.jpg).
-[Mock-up of the desktop version of the game](https://raw.githubusercontent.com/PeterLenting/second-milestone-project/master/images/mock-ups/desktop-mock-up-name-and-flag.jpg)
+[Mock-up of the mobile version of the homepage](https://raw.githubusercontent.com/PeterLenting/MSP3/master/static/images/mock-ups/mock-up-mobile-index.jpg).
+
+[Mock-up of the desktop version of the homepage](https://raw.githubusercontent.com/PeterLenting/MSP3/master/static/images/mock-ups/mock-up-desktop-index.jpg).
+
+[Mock-up of the mobile version of the form](https://raw.githubusercontent.com/PeterLenting/MSP3/master/static/images/mock-ups/mock-up-mobile-form.jpg).
+
+[Mock-up of the desktop version of the form](https://raw.githubusercontent.com/PeterLenting/MSP3/master/static/images/mock-ups/mock-up-desktop-form.jpg).
 
 ### User stories
 As a visitor, I want:
