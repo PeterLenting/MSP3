@@ -86,40 +86,45 @@ As a visitor, I want:
 
 **Footer** - The footer shows links to the social media accounts of Chasing Jack Kerouac. The links are empty now, since there are no social-accounts yet.
 
-**Current Date** - Sets the date of the post. Read only and will update when the post is edited.
+**Form-Current Date** - Sets the date of the post. Read only and will update when the post is edited.
 
-**City** - The City the experience the user had took place in.
+**Form-City** - The city the experience the user had took place in.
 
-**Location** - The specific location the experience the user had took place in.
+**Form-Location** - The specific location the experience the user had took place in.
 
-**Date of experience** - The date on which the user had his experience.
+**Form-Date of experience** - The date on which the user had his experience.
 
-**My name** - The name of the user.
+**Form-My name** - The name of the user.
 
-**Part of the book** - The part of On the Road in which Jack Kerouac writes about the location (1-4).
+**Form-Part of the book** - The part of On the Road in which Jack Kerouac writes about the location (1-4).
 
-**Chapter of the book** - The chapter of On the Road in which Jack Kerouac writes about the location (1-14).
+**Form-Chapter of the book** - The chapter of On the Road in which Jack Kerouac writes about the location (1-14).
 
-**Quote in Book** - A quote from On the Road in which Jack Kerouac tells about the location.
+**Form-Quote in Book** - A quote from On the Road in which Jack Kerouac tells about the location.
 
-**My experience** - A description of the experience the user had on the specific location.
+**Form-My experience** - A description of the experience the user had on the specific location.
 
 ### Features left to implement
 
 1.	Add Photo’s
+
 It would be nice for the user to be able to add a photo to their post. That way they can show what the place they visited, actually looked like at that moment. The photo would off course also be shown on the website.
 
 2.	Log in
+
 In the current condition of the webpage anyone can make changes to all the posts. Off course it would be really nice to give people the option to make an account and make them log in before they can write, update and delete their post.
 
 3.	Search
+
 By making it possible for users to search, they could just look at the places they are really interested in. In the future, when more posts are made, such a function would really add value to the site.
 
 4.	Give likes or thumbs up
+
 It would be nice if users where able to let other users know whether they like the post someone made. That way people would know their work was appreciated and other visitors would know which posts are most popular. 
 
 5. 	Add social media accounts
-The links in the footer to the social media accounts of Chasing Jack Kerouac are empty for know, since there are no accounts. These accounts could really add to the interaction of the community of Kerouac-fans and helps them share their post.
+
+The links in the footer to the social media accounts of Chasing Jack Kerouac are empty for know, since there are no accounts. These accounts could really add to the interaction of the community of Kerouac-fans and help them share their post.
 
 ## Technologies used
 •	HTML, CSS, JavaScript, Python
@@ -146,9 +151,9 @@ The links in the footer to the social media accounts of Chasing Jack Kerouac are
 
 •	[Github](https://github.com/) for version control and for users to view the deployed version of the website.
 
-•   [MongoDB](https://www.mongodb.com/) as the database
+•   [MongoDB](https://www.mongodb.com/) as the database.
 
-•   [Heroku](https://www.heroku.com/) to deploy the project
+•   [Heroku](https://www.heroku.com/) to deploy the project.
 
 ## Testing
 
@@ -190,9 +195,9 @@ I created, read, updated and deleted posts myself and had other people testing i
 **Chapter in the book in form** - Dropdown should contain nummers 1 to 14. Works.
 
 ### Improvements after testing
-•   Clicking the delete-button just deleted the post. At first I thought I would create and pop-up to say 'Your post has been deleted', but then I decided it would be better to make sure the user wanted to delete the post.  
+•   Clicking the delete-button just deleted the post. At first I thought I would create a pop-up to say 'Your post has been deleted', but then I decided it would be better to make sure the user wanted to delete the post.  
 
-•   In the Date of visit calander it was possible to pick a future date. That of course doesn't make much sense, so now only dates in the past can be picked.
+•   In the Date of visit calender it was possible to pick a future date. That of course doesn't make much sense, so now only dates in the past can be picked.
 
 •   At first de Date of visit determined the order of the posts on the homepage. It makes more sense to put the new posts on top, so now Current date determines the order.
 
@@ -215,15 +220,19 @@ The project was built using Gitpod. I committed the project and pushed it up to 
 [View the page here](https://chasing-jack-kerouac.herokuapp.com/index)
 
 •	Connection with MongoDB Atlas
+
 For the project a MongoDB Atlas database was used to store the date. To connect Flask to the MongoDB the third party library flaks-pymongo was installed.
 
 •	Connection string and secret key
+
 In the app.py the os class getenv method is used to point Heroku to the config variable (MONGO_URI) in order to keep "MONGO_DBNAME" and "MONGO_URI" secret.
 
-Requirements and Procfile
-•	A requirements.txt file is used to specify the dependencies required for the application. A Procfile is used to specify to Heroku the commands that are executed by the app on startup.
+•	Requirements and Procfile
+
+A requirements.txt file is used to specify the dependencies required for the application. A Procfile is used to specify to Heroku the commands that are executed by the app on startup.
 
 •	Connection between Github and Heroku
+
 On Heroku Dashboard the “Deploy” tab was chosen and the "GitHub" pane selected. Then the option to auto-deploy the project whenever it’s pushed to on Github was activated, the IP, PORT and my connection string in Heroku settings specified and finally, when scrolled down to "Manual deploy" "Master" branch was deployed.
 
 
